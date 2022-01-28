@@ -1,0 +1,28 @@
+16 روز اینده
+
+بیشینه:max_temp:
+کمینه:min_temp:
+pop: احتمال بارش (٪)
+app_max_temp: ظاهری / "احساس می کند مانند" درجه حرارت max_temp زمان (پیش فرض Celcius)
+app_min_temp: ظاهری / "احساس می کند مانند" درجه حرارت min_temp زمان (پیش فرض Celcius)
+
+
+
+ساعتی
+
+فرابنفش:uv:
+
+
+الان
+
+شبنم:dewpt:
+باد: 
+wind_cdir
+wind_spd
+فشار : pres: Pressure (mb).
+قابلیت دید : vis:
+رطوبت:rh:
+
+sunrise: زمان طلوع آفتاب (HH:MM).
+sunset: زمان غروب آفتاب (HH:MM).
+

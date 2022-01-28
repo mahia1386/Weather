@@ -1,0 +1,737 @@
+import React, { useEffect, useState } from "react";
+import appStyle from "./../style/react.css";
+import style from '../Font/style.css';
+
+function BoxTheNext16Days() {
+
+    const [data, setData] = useState({ data: "" });
+
+    async function getData() {
+        let data = await fetch('https://api.weatherbit.io/v2.0/forecast/daily?city=Berlin&country=DE&key=e18186b3a3324db780a0f350eeba7098');
+        data = await data.json()
+        setData(data);
+    }
+
+    useEffect(() => {
+        getData();
+    }, [])
+
+    let shiftIcon = (x) => {
+        let icon = "";
+        let iconText = data?.data?.[x]?.weather?.code;
+
+        if (iconText == 610) {
+
+            icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/48/000000/external-snowy-weather-those-icons-lineal-color-those-icons-1.png";
+
+        } else if (iconText == 804) {
+
+            icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/48/000000/external-cloudy-weather-those-icons-lineal-color-those-icons-1.png";
+
+        } else if (iconText == 803 || iconText == 801 || iconText == 802) {
+
+            icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/48/000000/external-cloudy-weather-those-icons-lineal-color-those-icons.png";
+
+        } else if (iconText == 520) {
+
+            icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/48/000000/external-rain-weather-those-icons-lineal-color-those-icons.png";
+
+        } else if (iconText == 200 || iconText == 201 || iconText == 230 || iconText == 231) {
+
+            icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/48/000000/external-storm-weather-those-icons-lineal-color-those-icons-3.png";
+
+        } else if (iconText == 202 || iconText == 232) {
+
+            icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/48/000000/external-storm-weather-those-icons-lineal-color-those-icons-1.png";
+
+        } else if (iconText == 233 || iconText == 511) {
+
+            icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/48/000000/external-hail-weather-those-icons-lineal-color-those-icons.png";
+
+        } else if (iconText == 300 || iconText == 301 || iconText == 500 || iconText == 501 || iconText == 522 || iconText == 302) {
+
+            icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/48/000000/external-rain-weather-those-icons-lineal-color-those-icons.png";
+
+        } else if (iconText == 502 || iconText == 520 || iconText == 521 || iconText == 900) {
+
+            icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/48/000000/external-humidity-weather-those-icons-lineal-color-those-icons.png";
+
+        } else if (iconText == 600 || iconText == 601 || iconText == 602 || iconText == 621 || iconText == 622) {
+
+            icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/48/000000/external-snow-weather-those-icons-lineal-color-those-icons.png";
+
+        } else if (iconText == 611 || iconText == 612) {
+
+            icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/48/000000/external-windy-weather-those-icons-lineal-color-those-icons-2.png";
+
+        } else if (iconText == 623) {
+
+            icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/48/000000/external-hurricane-weather-those-icons-lineal-color-those-icons.png";
+
+        } else if (iconText == 700 || iconText == 711 || iconText == 721 || iconText == 731 || iconText == 741 || iconText == 751) {
+
+            icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/48/000000/external-fog-weather-those-icons-lineal-color-those-icons.png";
+
+            // } else if (iconText == 800) {
+        } else {
+
+            icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/48/000000/external-sun-weather-those-icons-lineal-color-those-icons.png";
+
+        }
+
+        return (
+            <img className="img-for-3" src={icon} />
+        )
+    }
+
+    return (
+        <>
+            <div className="box box-The-next-16-days">
+                <h4>آب و هوای  16 روز آینده</h4>
+                <div className="row">
+                    <div className="col col-3">
+                        <div className="box div-box-3">
+                            {
+                                data.data
+                                    ? <h5>{data.data[1].datetime}</h5>
+                                    : null
+                            }
+                            <br />
+                            {shiftIcon(1)}
+                            <br />
+                            <br />
+                            <div style={{ display: "flex", justifyContent: "space-around", paddingLeft: "40px", paddingRight: "40px" }}>
+                                {
+                                    data.data
+                                        ? <div style={{ display: "flex" }}>
+                                            <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-temperature-weather-those-icons-lineal-color-those-icons.png" width="24px" height="24px" />
+                                            <p>{Math.trunc(data.data[1].max_temp)}°</p>
+                                        </div>
+                                        : null
+                                }
+                                {
+                                    data.data
+                                        ? <div style={{ display: "flex" }}>
+                                            <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-thermometer-weather-those-icons-lineal-color-those-icons-1.png" width="24px" height="24px" />
+                                            <p>{Math.trunc(data.data[1].min_temp)}°</p>
+                                        </div>
+                                        : null
+                                }
+                            </div>
+                            {
+                                data.data
+                                    ? <span>{data.data[1].pop}%</span>
+                                    : null
+                            }
+                            <br />
+                            <br />
+                            <button type="button" className="btn btn-warning btn-for-3" data-toggle="collapse" data-target="#datails1">جزئیات</button>
+                            <div id="datails1" class="collapse">
+                                <div className="box">
+                                    ekfekckedfke
+
+                                     </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col col-3">
+                        <div className="box div-box-3">
+                            <h5>{
+                                data.data
+                                    ? <h5>{data.data[2].datetime}</h5>
+                                    : null
+                            }</h5>
+                            <br />
+                            {shiftIcon(2)}
+                            <br />
+                            <br />
+                            <div style={{ display: "flex", justifyContent: "space-around", paddingLeft: "40px", paddingRight: "40px" }}>
+                                {
+                                    data.data
+                                        ? <div style={{ display: "flex" }}>
+                                            <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-temperature-weather-those-icons-lineal-color-those-icons.png" width="24px" height="24px" />
+                                            <p>{Math.trunc(data.data[2].max_temp)}°</p>
+                                        </div>
+                                        : null
+                                }
+                                {
+                                    data.data
+                                        ? <div style={{ display: "flex" }}>
+                                            <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-thermometer-weather-those-icons-lineal-color-those-icons-1.png" width="24px" height="24px" />
+                                            <p>{Math.trunc(data.data[2].min_temp)}°</p>
+                                        </div>
+                                        : null
+                                }
+                            </div>
+                            {
+                                data.data
+                                    ? <span>{data.data[2].pop}%</span>
+                                    : null
+                            }
+                            <br />
+                            <br />
+                            <button data-toggle="collapse" data-target="#details2" type="button" className="btn btn-warning btn-for-3">جزئیات</button>
+                            <div className="collapse" id="details2">
+                                <h1>Welcom Mahia</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col col-3">
+                        <div className="box div-box-3">
+                            <h5>{
+                                data.data
+                                    ? <h5>{data.data[3].datetime}</h5>
+                                    : null
+                            }</h5>
+                            <br />
+                            {shiftIcon(3)}
+                            <br />
+                            <br />
+                            <div style={{ display: "flex", justifyContent: "space-around", paddingLeft: "40px", paddingRight: "40px" }}>
+                                {
+                                    data.data
+                                        ? <div style={{ display: "flex" }}>
+                                            <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-temperature-weather-those-icons-lineal-color-those-icons.png" width="24px" height="24px" />
+                                            <p>{Math.trunc(data.data[3].max_temp)}°</p>
+                                        </div>
+                                        : null
+                                }
+                                {
+                                    data.data
+                                        ? <div style={{ display: "flex" }}>
+                                            <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-thermometer-weather-those-icons-lineal-color-those-icons-1.png" width="24px" height="24px" />
+                                            <p>{Math.trunc(data.data[3].min_temp)}°</p>
+                                        </div>
+                                        : null
+                                }
+                            </div>
+                            {
+                                data.data
+                                    ? <span>{data.data[3].pop}%</span>
+                                    : null
+                            }
+                            <br />
+                            <br />
+                            <button data-toggle="collapse" data-target="#details3" type="button" className="btn btn-warning btn-for-3">جزئیات</button>
+                            <div className="collapse" id="details3">
+                                <h1>Welcom Mahia</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col col-3">
+                        <div className="box div-box-3">
+                            <h5>{
+                                data.data
+                                    ? <h5>{data.data[4].datetime}</h5>
+                                    : null
+                            }</h5>
+                            <br />
+                            {shiftIcon(4)}
+                            <br />
+                            <br />
+                            <div style={{ display: "flex", justifyContent: "space-around", paddingLeft: "40px", paddingRight: "40px" }}>
+                                {
+                                    data.data
+                                        ? <div style={{ display: "flex" }}>
+                                            <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-temperature-weather-those-icons-lineal-color-those-icons.png" width="24px" height="24px" />
+                                            <p>{Math.trunc(data.data[4].max_temp)}°</p>
+                                        </div>
+                                        : null
+                                }
+                                {
+                                    data.data
+                                        ? <div style={{ display: "flex" }}>
+                                            <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-thermometer-weather-those-icons-lineal-color-those-icons-1.png" width="24px" height="24px" />
+                                            <p>{Math.trunc(data.data[4].min_temp)}°</p>
+                                        </div>
+                                        : null
+                                }
+                            </div>
+                            {
+                                data.data
+                                    ? <span>{data.data[4].pop}%</span>
+                                    : null
+                            }
+                            <br />
+                            <br />
+                            <button data-toggle="collapse" data-target="#details4" type="button" className="btn btn-warning btn-for-3">جزئیات</button>
+                            <div className="collapse" id="details4">
+                                <h1>Welcom Mahia</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <button className="btn btn-warning" data-toggle="collapse" data-target="#demo">آب و هوای روز های آینده</button>
+                <div id="demo" class="collapse row">
+                    <div className="col col-3">
+                        <div className="box div-box-3">
+                            {
+                                data.data
+                                    ? <h5>{data.data[5].datetime}</h5>
+                                    : null
+                            }
+                            <br />
+                            {shiftIcon(5)}
+                            <br />
+                            <br />
+                            <div style={{ display: "flex", justifyContent: "space-around", paddingLeft: "40px", paddingRight: "40px" }}>
+                                {
+                                    data.data
+                                        ? <div style={{ display: "flex" }}>
+                                            <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-temperature-weather-those-icons-lineal-color-those-icons.png" width="24px" height="24px" />
+                                            <p>{Math.trunc(data.data[5].max_temp)}°</p>
+                                        </div>
+                                        : null
+                                }
+                                {
+                                    data.data
+                                        ? <div style={{ display: "flex" }}>
+                                            <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-thermometer-weather-those-icons-lineal-color-those-icons-1.png" width="24px" height="24px" />
+                                            <p>{Math.trunc(data.data[5].min_temp)}°</p>
+                                        </div>
+                                        : null
+                                }
+                            </div>
+                            {
+                                data.data
+                                    ? <span>{data.data[5].pop}%</span>
+                                    : null
+                            }
+                            <br />
+                            <br />
+                            <button data-toggle="collapse" data-target="#details5" type="button" className="btn btn-warning btn-for-3">جزئیات</button>
+                            <div className="collapse" id="details5">
+                                <h1>Welcom Mahia</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col col-3">
+                        <div className="box div-box-3">
+                            <h5>{
+                                data.data
+                                    ? <h5>{data.data[6].datetime}</h5>
+                                    : null
+                            }</h5>
+                            <br />
+                            {shiftIcon(6)}
+                            <br />
+                            <br />
+                            <div style={{ display: "flex", justifyContent: "space-around", paddingLeft: "40px", paddingRight: "40px" }}>
+                                {
+                                    data.data
+                                        ? <div style={{ display: "flex" }}>
+                                            <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-temperature-weather-those-icons-lineal-color-those-icons.png" width="24px" height="24px" />
+                                            <p>{Math.trunc(data.data[6].max_temp)}°</p>
+                                        </div>
+                                        : null
+                                }
+                                {
+                                    data.data
+                                        ? <div style={{ display: "flex" }}>
+                                            <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-thermometer-weather-those-icons-lineal-color-those-icons-1.png" width="24px" height="24px" />
+                                            <p>{Math.trunc(data.data[6].min_temp)}°</p>
+                                        </div>
+                                        : null
+                                }
+                            </div>
+                            {
+                                data.data
+                                    ? <span>{data.data[6].pop}%</span>
+                                    : null
+                            }
+                            <br />
+                            <br />
+                            <button data-toggle="collapse" data-target="#details6" type="button" className="btn btn-warning btn-for-3">جزئیات</button>
+                            <div className="collapse" id="details6">
+                                <h1>Welcom Mahia</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col col-3">
+                        <div className="box div-box-3">
+                            <h5>{
+                                data.data
+                                    ? <h5>{data.data[7].datetime}</h5>
+                                    : null
+                            }</h5>
+                            <br />
+                            {shiftIcon(7)}
+                            <br />
+                            <br />
+                            <div style={{ display: "flex", justifyContent: "space-around", paddingLeft: "40px", paddingRight: "40px" }}>
+                                {
+                                    data.data
+                                        ? <div style={{ display: "flex" }}>
+                                            <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-temperature-weather-those-icons-lineal-color-those-icons.png" width="24px" height="24px" />
+                                            <p>{Math.trunc(data.data[7].max_temp)}°</p>
+                                        </div>
+                                        : null
+                                }
+                                {
+                                    data.data
+                                        ? <div style={{ display: "flex" }}>
+                                            <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-thermometer-weather-those-icons-lineal-color-those-icons-1.png" width="24px" height="24px" />
+                                            <p>{Math.trunc(data.data[7].min_temp)}°</p>
+                                        </div>
+                                        : null
+                                }
+                            </div>
+                            {
+                                data.data
+                                    ? <span>{data.data[7].pop}%</span>
+                                    : null
+                            }
+                            <br />
+                            <br />
+                            <button data-toggle="collapse" data-target="#details7" type="button" className="btn btn-warning btn-for-3">جزئیات</button>
+                            <div className="collapse" id="details7">
+                                <h1>Welcom Mahia</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col col-3">
+                        <div className="box div-box-3">
+                            <h5>{
+                                data.data
+                                    ? <h5>{data.data[8].datetime}</h5>
+                                    : null
+                            }</h5>
+                            <br />
+                            {shiftIcon(8)}
+                            <br />
+                            <br />
+                            <div style={{ display: "flex", justifyContent: "space-around", paddingLeft: "40px", paddingRight: "40px" }}>
+                                {
+                                    data.data
+                                        ? <div style={{ display: "flex" }}>
+                                            <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-temperature-weather-those-icons-lineal-color-those-icons.png" width="24px" height="24px" />
+                                            <p>{Math.trunc(data.data[8].max_temp)}°</p>
+                                        </div>
+                                        : null
+                                }
+                                {
+                                    data.data
+                                        ? <div style={{ display: "flex" }}>
+                                            <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-thermometer-weather-those-icons-lineal-color-those-icons-1.png" width="24px" height="24px" />
+                                            <p>{Math.trunc(data.data[5].min_temp)}°</p>
+                                        </div>
+                                        : null
+                                }
+                            </div>
+                            {
+                                data.data
+                                    ? <span>{data.data[8].pop}%</span>
+                                    : null
+                            }
+                            <br />
+                            <br />
+                            <button data-toggle="collapse" data-target="#details8" type="button" className="btn btn-warning btn-for-3">جزئیات</button>
+                            <div className="collapse" id="details8">
+                                <h1>Welcom Mahia</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col col-3">
+                        <div className="box div-box-3">
+                            {
+                                data.data
+                                    ? <h5>{data.data[9].datetime}</h5>
+                                    : null
+                            }
+                            <br />
+                            {shiftIcon(9)}
+                            <br />
+                            <br />
+                            <div style={{ display: "flex", justifyContent: "space-around", paddingLeft: "40px", paddingRight: "40px" }}>
+                                {
+                                    data.data
+                                        ? <div style={{ display: "flex" }}>
+                                            <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-temperature-weather-those-icons-lineal-color-those-icons.png" width="24px" height="24px" />
+                                            <p>{Math.trunc(data.data[9].max_temp)}°</p>
+                                        </div>
+                                        : null
+                                }
+                                {
+                                    data.data
+                                        ? <div style={{ display: "flex" }}>
+                                            <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-thermometer-weather-those-icons-lineal-color-those-icons-1.png" width="24px" height="24px" />
+                                            <p>{Math.trunc(data.data[9].min_temp)}°</p>
+                                        </div>
+                                        : null
+                                }
+                            </div>
+                            {
+                                data.data
+                                    ? <span>{data.data[9].pop}%</span>
+                                    : null
+                            }
+                            <br />
+                            <br />
+                            <button data-toggle="collapse" data-target="#details9" type="button" className="btn btn-warning btn-for-3">جزئیات</button>
+                            <div className="collapse" id="details9">
+                                <h1>Welcom Mahia</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col col-3">
+                        <div className="box div-box-3">
+                            <h5>{
+                                data.data
+                                    ? <h5>{data.data[10].datetime}</h5>
+                                    : null
+                            }</h5>
+                            <br />
+                            {shiftIcon(10)}
+                            <br />
+                            <br />
+                            <div style={{ display: "flex", justifyContent: "space-around", paddingLeft: "40px", paddingRight: "40px" }}>
+                                {
+                                    data.data
+                                        ? <div style={{ display: "flex" }}>
+                                            <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-temperature-weather-those-icons-lineal-color-those-icons.png" width="24px" height="24px" />
+                                            <p>{Math.trunc(data.data[10].max_temp)}°</p>
+                                        </div>
+                                        : null
+                                }
+                                {
+                                    data.data
+                                        ? <div style={{ display: "flex" }}>
+                                            <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-thermometer-weather-those-icons-lineal-color-those-icons-1.png" width="24px" height="24px" />
+                                            <p>{Math.trunc(data.data[10].min_temp)}°</p>
+                                        </div>
+                                        : null
+                                }
+                            </div>
+                            {
+                                data.data
+                                    ? <span>{data.data[10].pop}%</span>
+                                    : null
+                            }
+                            <br />
+                            <br />
+                            <button data-toggle="collapse" data-target="#details10" type="button" className="btn btn-warning btn-for-3">جزئیات</button>
+                            <div className="collapse" id="details10">
+                                <h1>Welcom Mahia</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col col-3">
+                        <div className="box div-box-3">
+                            <h5>{
+                                data.data
+                                    ? <h5>{data.data[11].datetime}</h5>
+                                    : null
+                            }</h5>
+                            <br />
+                            {shiftIcon(11)}
+                            <br />
+                            <br />
+                            <div style={{ display: "flex", justifyContent: "space-around", paddingLeft: "40px", paddingRight: "40px" }}>
+                                {
+                                    data.data
+                                        ? <div style={{ display: "flex" }}>
+                                            <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-temperature-weather-those-icons-lineal-color-those-icons.png" width="24px" height="24px" />
+                                            <p>{Math.trunc(data.data[11].max_temp)}°</p>
+                                        </div>
+                                        : null
+                                }
+                                {
+                                    data.data
+                                        ? <div style={{ display: "flex" }}>
+                                            <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-thermometer-weather-those-icons-lineal-color-those-icons-1.png" width="24px" height="24px" />
+                                            <p>{Math.trunc(data.data[11].min_temp)}°</p>
+                                        </div>
+                                        : null
+                                }
+                            </div>
+                            {
+                                data.data
+                                    ? <span>{data.data[11].pop}%</span>
+                                    : null
+                            }
+                            <br />
+                            <br />
+                            <button data-toggle="collapse" data-target="#details11" type="button" className="btn btn-warning btn-for-3">جزئیات</button>
+                            <div className="collapse" id="details11">
+                                <h1>Welcom Mahia</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col col-3">
+                        <div className="box div-box-3">
+                            {
+                                data.data
+                                    ? <h5>{data.data[12].datetime}</h5>
+                                    : null
+                            }
+                            <br />
+                            {shiftIcon(12)}
+                            <br />
+                            <br />
+                            <div style={{ display: "flex", justifyContent: "space-around", paddingLeft: "40px", paddingRight: "40px" }}>
+                                {
+                                    data.data
+                                        ? <div style={{ display: "flex" }}>
+                                            <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-temperature-weather-those-icons-lineal-color-those-icons.png" width="24px" height="24px" />
+                                            <p>{Math.trunc(data.data[12].max_temp)}°</p>
+                                        </div>
+                                        : null
+                                }
+                                {
+                                    data.data
+                                        ? <div style={{ display: "flex" }}>
+                                            <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-thermometer-weather-those-icons-lineal-color-those-icons-1.png" width="24px" height="24px" />
+                                            <p>{Math.trunc(data.data[12].min_temp)}°</p>
+                                        </div>
+                                        : null
+                                }
+                            </div>
+                            {
+                                data.data
+                                    ? <span>{data.data[12].pop}%</span>
+                                    : null
+                            }
+                            <br />
+                            <br />
+                            <button data-toggle="collapse" data-target="#details12" type="button" className="btn btn-warning btn-for-3">جزئیات</button>
+                            <div className="collapse" id="details12">
+                                <h1>Welcom Mahia</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col col-3">
+                        <div className="box div-box-3">
+                            <h5>{
+                                data.data
+                                    ? <h5>{data.data[13].datetime}</h5>
+                                    : null
+                            }</h5>
+                            <br />
+
+                            {shiftIcon(13)}
+                            <br />
+                            <br />
+                            <div style={{ display: "flex", justifyContent: "space-around", paddingLeft: "40px", paddingRight: "40px" }}>
+                                {
+                                    data.data
+                                        ? <div style={{ display: "flex" }}>
+                                            <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-temperature-weather-those-icons-lineal-color-those-icons.png" width="24px" height="24px" />
+                                            <p>{Math.trunc(data.data[13].max_temp)}°</p>
+                                        </div>
+                                        : null
+                                }
+                                {
+                                    data.data
+                                        ? <div style={{ display: "flex" }}>
+                                            <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-thermometer-weather-those-icons-lineal-color-those-icons-1.png" width="24px" height="24px" />
+                                            <p>{Math.trunc(data.data[13].min_temp)}°</p>
+                                        </div>
+                                        : null
+                                }
+                            </div>
+                            {
+                                data.data
+                                    ? <span>{data.data[13].pop}%</span>
+                                    : null
+                            }
+                            <br />
+                            <br />
+                            <button data-toggle="collapse" data-target="#details13" type="button" className="btn btn-warning btn-for-3">جزئیات</button>
+                            <div className="collapse" id="details13">
+                                <h1>Welcom Mahia</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col col-3">
+                        <div className="box div-box-3">
+                            {
+                                data.data
+                                    ? <h5>{data.data[14].datetime}</h5>
+                                    : null
+                            }
+                            <br />
+
+                            {shiftIcon(14)}
+                            <br />
+                            <br />
+                            <div style={{ display: "flex", justifyContent: "space-around", paddingLeft: "40px", paddingRight: "40px" }}>
+                                {
+                                    data.data
+                                        ? <div style={{ display: "flex" }}>
+                                            <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-temperature-weather-those-icons-lineal-color-those-icons.png" width="24px" height="24px" />
+                                            <p>{Math.trunc(data.data[14].max_temp)}°</p>
+                                        </div>
+                                        : null
+                                }
+                                {
+                                    data.data
+                                        ? <div style={{ display: "flex" }}>
+                                            <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-thermometer-weather-those-icons-lineal-color-those-icons-1.png" width="24px" height="24px" />
+                                            <p>{Math.trunc(data.data[14].min_temp)}°</p>
+                                        </div>
+                                        : null
+                                }
+                            </div>
+                            {
+                                data.data
+                                    ? <span>{data.data[14].pop}%</span>
+                                    : null
+                            }
+                            <br />
+                            <br />
+                            <button data-toggle="collapse" data-target="#details14" type="button" className="btn btn-warning btn-for-3">جزئیات</button>
+                            <div className="collapse" id="details14">
+                                <h1>Welcom Mahia</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col col-3">
+                        <div className="box div-box-3">
+                            <h5>{
+                                data.data
+                                    ? <h5>{data.data[15].datetime}</h5>
+                                    : null
+                            }</h5>
+                            <br />
+                            {shiftIcon(15)}
+                            <br />
+                            <br />
+                            <div style={{ display: "flex", justifyContent: "space-around", paddingLeft: "40px", paddingRight: "40px" }}>
+                                {
+                                    data.data
+                                        ? <div style={{ display: "flex" }}>
+                                            <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-temperature-weather-those-icons-lineal-color-those-icons.png" width="24px" height="24px" />
+                                            <p>{Math.trunc(data.data[15].max_temp)}°</p>
+                                        </div>
+                                        : null
+                                }
+                                {
+                                    data.data
+                                        ? <div style={{ display: "flex" }}>
+                                            <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-thermometer-weather-those-icons-lineal-color-those-icons-1.png" width="24px" height="24px" />
+                                            <p>{Math.trunc(data.data[15].min_temp)}°</p>
+                                        </div>
+                                        : null
+                                }
+                            </div>
+                            {
+                                data.data
+                                    ? <span>{data.data[15].pop}%</span>
+                                    : null
+                            }
+                            <br />
+                            <br />
+                            <button data-toggle="collapse" data-target="#details15" type="button" className="btn btn-warning btn-for-3">جزئیات</button>
+                            <div className="collapse" id="details15">
+                                <h1>Welcom Mahia</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </>
+    );
+}
+
+export default BoxTheNext16Days;
