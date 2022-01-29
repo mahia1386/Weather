@@ -72,8 +72,7 @@ function BoxTheNext16Days() {
 
             icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/48/000000/external-fog-weather-those-icons-lineal-color-those-icons.png";
 
-            // } else if (iconText == 800) {
-        } else {
+        } else if (iconText == 800) {
 
             icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/48/000000/external-sun-weather-those-icons-lineal-color-those-icons.png";
 

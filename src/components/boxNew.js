@@ -28,61 +28,61 @@ function BoxNew() {
 
     let shiftIcon = () => {
         let icon = "";
-        let iconText = data?.date?.[0]?.weather?.description;
+        let iconText = data?.data?.[0]?.weather?.code;
 
-        if (iconText = 610) {
+        if (iconText == 610) {
 
             icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/96/000000/external-snowy-weather-those-icons-lineal-color-those-icons-1.png";
 
-        } else if (iconText = 804) {
+        } else if (iconText == 804) {
 
             icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/96/000000/external-cloudy-weather-those-icons-lineal-color-those-icons-1.png";
 
-        } else if (iconText = 803 || 801 | 802) {
+        } else if (iconText == 803 || iconText == 801 || iconText == 802) {
 
             icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/96/000000/external-cloudy-weather-those-icons-lineal-color-those-icons.png";
 
-        } else if (iconText = 520) {
+        } else if (iconText == 520) {
 
             icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/96/000000/external-rain-weather-those-icons-lineal-color-those-icons.png";
 
-        } else if (iconText = 200 || 201 || 230 || 231) {
+        } else if (iconText == 200 || iconText == 201 || iconText == 230 || iconText == 231) {
 
             icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/96/000000/external-storm-weather-those-icons-lineal-color-those-icons-3.png";
 
-        } else if (iconText = 202 || 232) {
+        } else if (iconText == 202 || iconText == 232) {
 
             icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/96/000000/external-storm-weather-those-icons-lineal-color-those-icons-1.png";
 
-        } else if (iconText = 233 || 511) {
+        } else if (iconText == 233 || iconText == 511) {
 
             icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/96/000000/external-hail-weather-those-icons-lineal-color-those-icons.png";
 
-        } else if (iconText = 300 || 301 || 500 || 501 || 522 || 302) {
+        } else if (iconText == 300 || iconText == 301 || iconText == 500 || iconText == 501 || iconText == 522 || iconText == 302) {
 
             icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/96/000000/external-rain-weather-those-icons-lineal-color-those-icons.png";
 
-        } else if (iconText = 502 || 520 || 521 || 900) {
+        } else if (iconText == 502 || iconText == 520 || iconText == 521 || iconText == 900) {
 
             icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/96/000000/external-humidity-weather-those-icons-lineal-color-those-icons.png";
 
-        } else if (iconText = 600 || 601 || 602 || 621 || 622) {
+        } else if (iconText == 600 || iconText == 601 || iconText == 602 || iconText == 621 || iconText == 622) {
 
             icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/96/000000/external-snow-weather-those-icons-lineal-color-those-icons.png";
 
-        } else if (iconText = 611 || 612) {
+        } else if (iconText == 611 || iconText == 612) {
 
             icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/96/000000/external-windy-weather-those-icons-lineal-color-those-icons-2.png";
 
-        } else if (iconText = 623) {
+        } else if (iconText == 623) {
 
             icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/96/000000/external-hurricane-weather-those-icons-lineal-color-those-icons.png";
 
-        } else if (iconText = 700 || 711 || 721 || 731 || 741 || 751) {
+        } else if (iconText == 700 || iconText == 711 || iconText == 721 || iconText == 731 || iconText == 741 || iconText == 751) {
 
             icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/96/000000/external-fog-weather-those-icons-lineal-color-those-icons.png";
 
-        } else if (iconText = 800) {
+        } else if (iconText == 800) {
 
             icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/96/000000/external-sun-weather-those-icons-lineal-color-those-icons.png";
 
