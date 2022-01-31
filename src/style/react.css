@@ -15,11 +15,6 @@ body{
     margin-top: 50px;
 }
 
-.box-new{
-    margin-top: 80px;
-    display: flex;
-}
-
 .span-from-1-2{
     padding-top: 10px;
     padding-left: 6px;
@@ -54,4 +49,18 @@ hr{
 
 .details{
     padding: 20px;
+}
+
+.box-home{
+    padding: 18px;
+}
+
+a{
+    color: #fff;
+}
+
+a:hover{
+    color: #ffc107;
+    font-size: 18px;
+    text-decoration: none;
 }

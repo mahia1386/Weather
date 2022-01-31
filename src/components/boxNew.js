@@ -97,11 +97,11 @@ function BoxNew() {
 
     return (
         <>
-            <div className="box box-new row" id="part-1">
-                <div className="col col-2">
+            <div className="box row" id="part-1" style={{ marginLeft: "0px", marginRight: "0px"}}>
+                <div className="col col-3">
                     {shiftIcon()}
                 </div>
-                <div className="col col-2">
+                <div className="col col-3">
                     <p>آلمان , برلین</p>
                     <div className="row">
                         <div className="col col-5">
