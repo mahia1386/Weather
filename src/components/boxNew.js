@@ -97,7 +97,7 @@ function BoxNew() {
 
     return (
         <>
-            <div className="box box-new row">
+            <div className="box box-new row" id="part-1">
                 <div className="col col-2">
                     {shiftIcon()}
                 </div>

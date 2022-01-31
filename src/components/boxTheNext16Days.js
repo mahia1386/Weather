@@ -85,7 +85,7 @@ function BoxTheNext16Days() {
 
     return (
         <>
-            <div className="box box-The-next-16-days">
+            <div className="box box-The-next-16-days" id="part-2">
                 <h4>آب و هوای  16 روز آینده</h4>
                 <div className="row">
                     <div className="col col-3">
@@ -1149,7 +1149,7 @@ function BoxTheNext16Days() {
                                     </span>
                                     <br />
                                     <hr />
-                                    <span className="day-details">جهت باد
+                                    <span className="day-details">:جهت باد
                                         {data.data
                                             ? <span className="span-from-1-2"> {data.data[15].wind_cdir} </span>
                                             : null}

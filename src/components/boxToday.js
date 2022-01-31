@@ -26,7 +26,7 @@ function BoxToday(){
     }, [])
 
     return(
-        <div className="box box-today">
+        <div className="box box-today" id="part-3">
             <div className="row">
                 <h5 className="col col-9" style={{ textAlign: "right" }}>آب و هوای امروز برلین</h5>
                 <div className="col col-3 row">
