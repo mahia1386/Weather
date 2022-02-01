@@ -16,12 +16,12 @@ function App() {
             </div>
             <div className="container">
                 <div className="row">
-                    <div className="col col-9">
+                    <div className="col col-12 col-md-12 col-lg-9 col-xl-9">
                         <BoxNew />
                         <BoxToday />
                         <BoxTheNext16Days />
                     </div>
-                    <div className="col col-3">
+                    <div className="col col-12 col-md-12 col-lg-3 col-xl-3">
                         <div className="box">
                             <a href="#part-1">الان</a>
                             <br />

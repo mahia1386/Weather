@@ -28,9 +28,9 @@ function BoxToday(){
     return(
         <div className="box box-today" id="part-2">
             <div className="row">
-                <h5 className="col col-9" style={{ textAlign: "right" }}>آب و هوای امروز برلین</h5>
-                <div className="col col-3 row">
-                    <div className="col col-6 div-from-1-2">
+                <h5 className="col col-12 col-md-12 col-lg-7 col-xl-7" style={{ textAlign: "right" }}>آب و هوای امروز برلین</h5>
+                <div className="col col-12 col-md-12 col-lg-5 col-xl-5 row">
+                    <div className="col col-12 col-md-12 col-lg-6 col-xl-6 div-from-1-2">
 
                         {tempToday.data
                             ? <span className="span-from-1-2"> {tempToday.data[0].sunset} </span>
@@ -41,7 +41,7 @@ function BoxToday(){
                         </div>
 
                     </div>
-                    <div className="col col-6 div-from-1-2">
+                    <div className="col col-12 col-md-12 col-lg-6 col-xl-6 div-from-1-2">
 
                         {tempToday.data
                             ? <span className="span-from-1-2"> {tempToday.data[0].sunrise} </span>
@@ -56,7 +56,7 @@ function BoxToday(){
             </div>
             <br />
             <div className="row">
-                <div className="col col-6 box-2-2">
+                <div className="col col-12 col-md-12 col-lg-6 col-xl-6 box-2-2">
                     <span>
                         رطوبت:
                             {data.data
@@ -87,8 +87,10 @@ function BoxToday(){
                             ? <span className="span-from-1-2"> {Math.trunc(data.data[0].pop)} %</span>
                             : null}
                     </span>
+                    <br />
+                    <br />
                 </div>
-                <div className="col col-6 box-2-2">
+                <div className="col col-12 col-md-12 col-lg-6 col-xl-6 box-2-2">
                     <span>
                         باد:
                             {data.data
