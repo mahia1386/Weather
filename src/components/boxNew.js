@@ -91,17 +91,21 @@ function BoxNew() {
         }
 
         return (
-            <img src={icon} />
+            <img src={icon} className=""/>
         );
     }
 
     return (
         <>
             <div className="box row" id="part-1" style={{ marginLeft: "0px", marginRight: "0px"}}>
-                <div className="col col-12 col-md-12 col-lg-3 col-xl-3">
+                <div className="col col-12 col-md-12 col-lg-3 col-xl-3 icon-weather">
                     {shiftIcon()}
                 </div>
-                <div className="col col-12 col-md-12 col-lg-3 col-xl-3">
+                <br />
+                <br />
+                <div className="col col-12 col-md-12 col-lg-3 col-xl-3 icon-weather">
+                    <br />
+
                     <p>آلمان , برلین</p>
                     <div className="row">
                         <div className="col col-5">
@@ -128,10 +132,11 @@ function BoxNew() {
                             }
                         </div>
                     </div>
+                    <br />
                 </div>
-                <div className="col col-12 col-md-12 col-lg-6 col-xl-6 box" style={{ marginTop: "0px" }}>
+                <div className="col col-12 col-md-12 col-lg-6 col-xl-6 box icon-weather" style={{ marginTop: "0px" }}>
                     {tempToday.data
-                        ? <span>بر اساس اخرین داده در تاریخ {tempToday.data[0].ob_time}</span>
+                        ? <span style={{paddingTop:"80px"}}>بر اساس آخرین داده در تاریخ {tempToday.data[0].ob_time}</span>
                         : null
                     }
                 </div>

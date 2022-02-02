@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "./image/logo.png";
+
 import BoxToday from "./components/boxToday";
 import BoxNew from "./components/boxNew";
 import BoxTheNext16Days from "./components/boxTheNext16Days";
@@ -10,8 +10,8 @@ function App() {
         <>
             <div style={{ padding: "10px", backgroundColor: '#ffc107', display: 'flex' }}>
                 <div style={{ display: 'flex' }}>
-                    <img src={logo} height="50px" width="50px" />
-                    <div style={{ marginTop: "16px", marginLeft: "10px" }}>آب و هوای امروز</div>
+                    <img src="https://img.icons8.com/doodle/48/000000/apple-weather.png"/>
+                    <div style={{ marginRight: "10px" , paddingTop : "10px"}}>آب و هوای امروز</div>
                 </div>
             </div>
             <div className="container">

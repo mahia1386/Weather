@@ -85,9 +85,9 @@ function BoxTheNext16Days() {
 
     return (
         <div className="box box-The-next-16-days" id="part-3">
-            <h4>آب و هوای  16 روز آینده</h4>
+            <h5>آب و هوای  16 روز آینده</h5>
             <div className="row">
-                <div className="col col-6 col-md-6 col-lg-3 col-xl-3">
+                <div className="col col-6 col-md-6 col-lg-3 col-xl-3" style={{paddingLeft : "3px" , paddingRight : "3px" }}>
                     <div className="box div-box-3">
                         {
                             data.data
@@ -159,7 +159,7 @@ function BoxTheNext16Days() {
                         </div>
                     </div>
                 </div>
-                <div className="col col-6 col-md-6 col-lg-3 col-xl-3">
+                <div className="col col-6 col-md-6 col-lg-3 col-xl-3" style={{paddingLeft : "3px" , paddingRight : "3px" }}>
                     <div className="box div-box-3">
                         <h5>{
                             data.data
@@ -231,7 +231,7 @@ function BoxTheNext16Days() {
                         </div>
                     </div>
                 </div>
-                <div className="col col-6 col-md-6 col-lg-3 col-xl-3">
+                <div className="col col-6 col-md-6 col-lg-3 col-xl-3" style={{paddingLeft : "3px" , paddingRight : "3px" }}>
                     <div className="box div-box-3">
                         <h5>{
                             data.data
@@ -303,7 +303,7 @@ function BoxTheNext16Days() {
                         </div>
                     </div>
                 </div>
-                <div className="col col-6 col-md-6 col-lg-3 col-xl-3">
+                <div className="col col-6 col-md-6 col-lg-3 col-xl-3" style={{paddingLeft : "3px" , paddingRight : "3px" }}>
                     <div className="box div-box-3">
                         <h5>{
                             data.data
@@ -380,7 +380,7 @@ function BoxTheNext16Days() {
             <button className="btn btn-warning" data-toggle="collapse" data-target="#demo">آب و هوای روز های آینده</button>
             <br/>
             <div id="demo" class="collapse row">
-                <div className="col col-6 col-md-6 col-lg-3 col-xl-3">
+                <div className="col col-6 col-md-6 col-lg-3 col-xl-3" style={{paddingLeft : "3px" , paddingRight : "3px" }}>
                     <div className="box div-box-3">
                         {
                             data.data
@@ -452,7 +452,7 @@ function BoxTheNext16Days() {
                         </div>
                     </div>
                 </div>
-                <div className="col col-6 col-md-6 col-lg-3 col-xl-3">
+                <div className="col col-6 col-md-6 col-lg-3 col-xl-3" style={{paddingLeft : "3px" , paddingRight : "3px" }}>
                     <div className="box div-box-3">
                         <h5>{
                             data.data
@@ -524,7 +524,7 @@ function BoxTheNext16Days() {
                         </div>
                     </div>
                 </div>
-                <div className="col col-6 col-md-6 col-lg-3 col-xl-3">
+                <div className="col col-6 col-md-6 col-lg-3 col-xl-3" style={{paddingLeft : "3px" , paddingRight : "3px" }}>
                     <div className="box div-box-3">
                         <h5>{
                             data.data
@@ -596,7 +596,7 @@ function BoxTheNext16Days() {
                         </div>
                     </div>
                 </div>
-                <div className="col col-6 col-md-6 col-lg-3 col-xl-3">
+                <div className="col col-6 col-md-6 col-lg-3 col-xl-3" style={{paddingLeft : "3px" , paddingRight : "3px" }}>
                     <div className="box div-box-3">
                         <h5>{
                             data.data
@@ -668,7 +668,7 @@ function BoxTheNext16Days() {
                         </div>
                     </div>
                 </div>
-                <div className="col col-6 col-md-6 col-lg-3 col-xl-3">
+                <div className="col col-6 col-md-6 col-lg-3 col-xl-3" style={{paddingLeft : "3px" , paddingRight : "3px" }}>
                     <div className="box div-box-3">
                         {
                             data.data
@@ -740,7 +740,7 @@ function BoxTheNext16Days() {
                         </div>
                     </div>
                 </div>
-                <div className="col col-6 col-md-6 col-lg-3 col-xl-3">
+                <div className="col col-6 col-md-6 col-lg-3 col-xl-3" style={{paddingLeft : "3px" , paddingRight : "3px" }}>
                     <div className="box div-box-3">
                         <h5>{
                             data.data
@@ -812,7 +812,7 @@ function BoxTheNext16Days() {
                         </div>
                     </div>
                 </div>
-                <div className="col col-6 col-md-6 col-lg-3 col-xl-3">
+                <div className="col col-6 col-md-6 col-lg-3 col-xl-3" style={{paddingLeft : "3px" , paddingRight : "3px" }}>
                     <div className="box div-box-3">
                         <h5>{
                             data.data
@@ -884,7 +884,7 @@ function BoxTheNext16Days() {
                         </div>
                     </div>
                 </div>
-                <div className="col col-6 col-md-6 col-lg-3 col-xl-3">
+                <div className="col col-6 col-md-6 col-lg-3 col-xl-3" style={{paddingLeft : "3px" , paddingRight : "3px" }}>
                     <div className="box div-box-3">
                         {
                             data.data
@@ -956,7 +956,7 @@ function BoxTheNext16Days() {
                         </div>
                     </div>
                 </div>
-                <div className="col col-6 col-md-6 col-lg-3 col-xl-3">
+                <div className="col col-6 col-md-6 col-lg-3 col-xl-3" style={{paddingLeft : "3px" , paddingRight : "3px" }}>
                     <div className="box div-box-3">
                         <h5>{
                             data.data
@@ -1029,7 +1029,7 @@ function BoxTheNext16Days() {
                         </div>
                     </div>
                 </div>
-                <div className="col col-6 col-md-6 col-lg-3 col-xl-3">
+                <div className="col col-6 col-md-6 col-lg-3 col-xl-3" style={{paddingLeft : "3px" , paddingRight : "3px" }}>
                     <div className="box div-box-3">
                         {
                             data.data
@@ -1102,7 +1102,7 @@ function BoxTheNext16Days() {
                         </div>
                     </div>
                 </div>
-                <div className="col col-6 col-md-6 col-lg-3 col-xl-3">
+                <div className="col col-6 col-md-6 col-lg-3 col-xl-3" style={{paddingLeft : "3px" , paddingRight : "3px" }}>
                     <div className="box div-box-3">
                         <h5>{
                             data.data
