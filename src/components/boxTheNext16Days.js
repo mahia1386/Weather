@@ -87,8 +87,8 @@ function BoxTheNext16Days() {
         <div className="box box-The-next-16-days" id="part-3">
             <h5>آب و هوای  16 روز آینده</h5>
             <div className="row">
-                <div className="col col-6 col-md-6 col-lg-3 col-xl-3" style={{paddingLeft : "3px" , paddingRight : "3px" }}>
-                    <div className="box div-box-3">
+                <div className="col col-6 col-md-6 col-lg-3 col-xl-3 style-for-days">
+                    <div className="box box-days-Section3 ">
                         {
                             data.data
                                 ? <h5>{data.data[1].datetime}</h5>
@@ -98,7 +98,7 @@ function BoxTheNext16Days() {
                         {shiftIcon(1)}
                         <br />
                         <br />
-                        <div style={{ display: "flex", justifyContent: "space-around", paddingLeft: "40px", paddingRight: "40px" }}>
+                        <div className="max-min-for-days">
                             {
                                 data.data
                                     ? <div style={{ display: "flex" }}>
@@ -123,7 +123,7 @@ function BoxTheNext16Days() {
                         }
                         <br />
                         <br />
-                        <button type="button" className="btn btn-warning btn-for-3" data-toggle="collapse" data-target="#datails1">جزئیات</button>
+                        <button type="button" className="btn btn-warning btn-be-days" data-toggle="collapse" data-target="#datails1">جزئیات</button>
                         <div id="datails1" class="collapse">
                             <div className="details">
                                 <span className="day-details">
@@ -159,8 +159,8 @@ function BoxTheNext16Days() {
                         </div>
                     </div>
                 </div>
-                <div className="col col-6 col-md-6 col-lg-3 col-xl-3" style={{paddingLeft : "3px" , paddingRight : "3px" }}>
-                    <div className="box div-box-3">
+                <div className="col col-6 col-md-6 col-lg-3 col-xl-3 style-for-days">
+                    <div className="box box-days-Section3 ">
                         <h5>{
                             data.data
                                 ? <h5>{data.data[2].datetime}</h5>
@@ -170,7 +170,7 @@ function BoxTheNext16Days() {
                         {shiftIcon(2)}
                         <br />
                         <br />
-                        <div style={{ display: "flex", justifyContent: "space-around", paddingLeft: "40px", paddingRight: "40px" }}>
+                        <div style={{ display: "flex", justifyContent: "space-around"}}>
                             {
                                 data.data
                                     ? <div style={{ display: "flex" }}>
@@ -195,7 +195,7 @@ function BoxTheNext16Days() {
                         }
                         <br />
                         <br />
-                        <button data-toggle="collapse" data-target="#details2" type="button" className="btn btn-warning btn-for-3">جزئیات</button>
+                        <button data-toggle="collapse" data-target="#details2" type="button" className="btn btn-warning btn-be-days">جزئیات</button>
                         <div className="collapse" id="details2">
                             <div className="details">
                                 <span className="day-details">
@@ -231,8 +231,8 @@ function BoxTheNext16Days() {
                         </div>
                     </div>
                 </div>
-                <div className="col col-6 col-md-6 col-lg-3 col-xl-3" style={{paddingLeft : "3px" , paddingRight : "3px" }}>
-                    <div className="box div-box-3">
+                <div className="col col-6 col-md-6 col-lg-3 col-xl-3 style-for-days">
+                    <div className="box box-days-Section3 ">
                         <h5>{
                             data.data
                                 ? <h5>{data.data[3].datetime}</h5>
@@ -242,7 +242,7 @@ function BoxTheNext16Days() {
                         {shiftIcon(3)}
                         <br />
                         <br />
-                        <div style={{ display: "flex", justifyContent: "space-around", paddingLeft: "40px", paddingRight: "40px" }}>
+                        <div style={{ display: "flex", justifyContent: "space-around"}}>
                             {
                                 data.data
                                     ? <div style={{ display: "flex" }}>
@@ -267,7 +267,7 @@ function BoxTheNext16Days() {
                         }
                         <br />
                         <br />
-                        <button data-toggle="collapse" data-target="#details3" type="button" className="btn btn-warning btn-for-3">جزئیات</button>
+                        <button data-toggle="collapse" data-target="#details3" type="button" className="btn btn-warning btn-be-days">جزئیات</button>
                         <div className="collapse" id="details3">
                             <div className="details">
                                 <span className="day-details">
@@ -303,8 +303,8 @@ function BoxTheNext16Days() {
                         </div>
                     </div>
                 </div>
-                <div className="col col-6 col-md-6 col-lg-3 col-xl-3" style={{paddingLeft : "3px" , paddingRight : "3px" }}>
-                    <div className="box div-box-3">
+                <div className="col col-6 col-md-6 col-lg-3 col-xl-3 style-for-days">
+                    <div className="box box-days-Section3 ">
                         <h5>{
                             data.data
                                 ? <h5>{data.data[4].datetime}</h5>
@@ -314,7 +314,7 @@ function BoxTheNext16Days() {
                         {shiftIcon(4)}
                         <br />
                         <br />
-                        <div style={{ display: "flex", justifyContent: "space-around", paddingLeft: "40px", paddingRight: "40px" }}>
+                        <div style={{ display: "flex", justifyContent: "space-around"}}>
                             {
                                 data.data
                                     ? <div style={{ display: "flex" }}>
@@ -339,7 +339,7 @@ function BoxTheNext16Days() {
                         }
                         <br />
                         <br />
-                        <button data-toggle="collapse" data-target="#details4" type="button" className="btn btn-warning btn-for-3">جزئیات</button>
+                        <button data-toggle="collapse" data-target="#details4" type="button" className="btn btn-warning btn-be-days">جزئیات</button>
                         <div className="collapse" id="details4">
                             <div className="details">
                                 <span className="day-details">
@@ -380,8 +380,8 @@ function BoxTheNext16Days() {
             <button className="btn btn-warning" data-toggle="collapse" data-target="#demo">آب و هوای روز های آینده</button>
             <br/>
             <div id="demo" class="collapse row">
-                <div className="col col-6 col-md-6 col-lg-3 col-xl-3" style={{paddingLeft : "3px" , paddingRight : "3px" }}>
-                    <div className="box div-box-3">
+                <div className="col col-6 col-md-6 col-lg-3 col-xl-3 style-for-days">
+                    <div className="box box-days-Section3 ">
                         {
                             data.data
                                 ? <h5>{data.data[5].datetime}</h5>
@@ -391,7 +391,7 @@ function BoxTheNext16Days() {
                         {shiftIcon(5)}
                         <br />
                         <br />
-                        <div style={{ display: "flex", justifyContent: "space-around", paddingLeft: "40px", paddingRight: "40px" }}>
+                        <div style={{ display: "flex", justifyContent: "space-around"}}>
                             {
                                 data.data
                                     ? <div style={{ display: "flex" }}>
@@ -416,7 +416,7 @@ function BoxTheNext16Days() {
                         }
                         <br />
                         <br />
-                        <button data-toggle="collapse" data-target="#details5" type="button" className="btn btn-warning btn-for-3">جزئیات</button>
+                        <button data-toggle="collapse" data-target="#details5" type="button" className="btn btn-warning btn-be-days">جزئیات</button>
                         <div className="collapse" id="details5">
                             <div className="details">
                                 <span className="day-details">
@@ -452,8 +452,8 @@ function BoxTheNext16Days() {
                         </div>
                     </div>
                 </div>
-                <div className="col col-6 col-md-6 col-lg-3 col-xl-3" style={{paddingLeft : "3px" , paddingRight : "3px" }}>
-                    <div className="box div-box-3">
+                <div className="col col-6 col-md-6 col-lg-3 col-xl-3 style-for-days">
+                    <div className="box box-days-Section3 ">
                         <h5>{
                             data.data
                                 ? <h5>{data.data[6].datetime}</h5>
@@ -463,7 +463,7 @@ function BoxTheNext16Days() {
                         {shiftIcon(6)}
                         <br />
                         <br />
-                        <div style={{ display: "flex", justifyContent: "space-around", paddingLeft: "40px", paddingRight: "40px" }}>
+                        <div style={{ display: "flex", justifyContent: "space-around"}}>
                             {
                                 data.data
                                     ? <div style={{ display: "flex" }}>
@@ -488,7 +488,7 @@ function BoxTheNext16Days() {
                         }
                         <br />
                         <br />
-                        <button data-toggle="collapse" data-target="#details6" type="button" className="btn btn-warning btn-for-3">جزئیات</button>
+                        <button data-toggle="collapse" data-target="#details6" type="button" className="btn btn-warning btn-be-days">جزئیات</button>
                         <div className="collapse" id="details6">
                             <div className="details">
                                 <span className="day-details">
@@ -524,8 +524,8 @@ function BoxTheNext16Days() {
                         </div>
                     </div>
                 </div>
-                <div className="col col-6 col-md-6 col-lg-3 col-xl-3" style={{paddingLeft : "3px" , paddingRight : "3px" }}>
-                    <div className="box div-box-3">
+                <div className="col col-6 col-md-6 col-lg-3 col-xl-3 style-for-days">
+                    <div className="box box-days-Section3 ">
                         <h5>{
                             data.data
                                 ? <h5>{data.data[7].datetime}</h5>
@@ -535,7 +535,7 @@ function BoxTheNext16Days() {
                         {shiftIcon(7)}
                         <br />
                         <br />
-                        <div style={{ display: "flex", justifyContent: "space-around", paddingLeft: "40px", paddingRight: "40px" }}>
+                        <div style={{ display: "flex", justifyContent: "space-around"}}>
                             {
                                 data.data
                                     ? <div style={{ display: "flex" }}>
@@ -560,7 +560,7 @@ function BoxTheNext16Days() {
                         }
                         <br />
                         <br />
-                        <button data-toggle="collapse" data-target="#details7" type="button" className="btn btn-warning btn-for-3">جزئیات</button>
+                        <button data-toggle="collapse" data-target="#details7" type="button" className="btn btn-warning btn-be-days">جزئیات</button>
                         <div className="collapse" id="details7">
                             <div className="details">
                                 <span className="day-details">
@@ -596,8 +596,8 @@ function BoxTheNext16Days() {
                         </div>
                     </div>
                 </div>
-                <div className="col col-6 col-md-6 col-lg-3 col-xl-3" style={{paddingLeft : "3px" , paddingRight : "3px" }}>
-                    <div className="box div-box-3">
+                <div className="col col-6 col-md-6 col-lg-3 col-xl-3 style-for-days">
+                    <div className="box box-days-Section3 ">
                         <h5>{
                             data.data
                                 ? <h5>{data.data[8].datetime}</h5>
@@ -607,7 +607,7 @@ function BoxTheNext16Days() {
                         {shiftIcon(8)}
                         <br />
                         <br />
-                        <div style={{ display: "flex", justifyContent: "space-around", paddingLeft: "40px", paddingRight: "40px" }}>
+                        <div style={{ display: "flex", justifyContent: "space-around"}}>
                             {
                                 data.data
                                     ? <div style={{ display: "flex" }}>
@@ -632,7 +632,7 @@ function BoxTheNext16Days() {
                         }
                         <br />
                         <br />
-                        <button data-toggle="collapse" data-target="#details8" type="button" className="btn btn-warning btn-for-3">جزئیات</button>
+                        <button data-toggle="collapse" data-target="#details8" type="button" className="btn btn-warning btn-be-days">جزئیات</button>
                         <div className="collapse" id="details8">
                             <div className="details">
                                 <span className="day-details">
@@ -668,8 +668,8 @@ function BoxTheNext16Days() {
                         </div>
                     </div>
                 </div>
-                <div className="col col-6 col-md-6 col-lg-3 col-xl-3" style={{paddingLeft : "3px" , paddingRight : "3px" }}>
-                    <div className="box div-box-3">
+                <div className="col col-6 col-md-6 col-lg-3 col-xl-3 style-for-days">
+                    <div className="box box-days-Section3 ">
                         {
                             data.data
                                 ? <h5>{data.data[9].datetime}</h5>
@@ -679,7 +679,7 @@ function BoxTheNext16Days() {
                         {shiftIcon(9)}
                         <br />
                         <br />
-                        <div style={{ display: "flex", justifyContent: "space-around", paddingLeft: "40px", paddingRight: "40px" }}>
+                        <div style={{ display: "flex", justifyContent: "space-around"}}>
                             {
                                 data.data
                                     ? <div style={{ display: "flex" }}>
@@ -704,7 +704,7 @@ function BoxTheNext16Days() {
                         }
                         <br />
                         <br />
-                        <button data-toggle="collapse" data-target="#details9" type="button" className="btn btn-warning btn-for-3">جزئیات</button>
+                        <button data-toggle="collapse" data-target="#details9" type="button" className="btn btn-warning btn-be-days">جزئیات</button>
                         <div className="collapse" id="details9">
                             <div className="details">
                                 <span className="day-details">
@@ -740,8 +740,8 @@ function BoxTheNext16Days() {
                         </div>
                     </div>
                 </div>
-                <div className="col col-6 col-md-6 col-lg-3 col-xl-3" style={{paddingLeft : "3px" , paddingRight : "3px" }}>
-                    <div className="box div-box-3">
+                <div className="col col-6 col-md-6 col-lg-3 col-xl-3 style-for-days">
+                    <div className="box box-days-Section3 ">
                         <h5>{
                             data.data
                                 ? <h5>{data.data[10].datetime}</h5>
@@ -751,7 +751,7 @@ function BoxTheNext16Days() {
                         {shiftIcon(10)}
                         <br />
                         <br />
-                        <div style={{ display: "flex", justifyContent: "space-around", paddingLeft: "40px", paddingRight: "40px" }}>
+                        <div style={{ display: "flex", justifyContent: "space-around"}}>
                             {
                                 data.data
                                     ? <div style={{ display: "flex" }}>
@@ -776,7 +776,7 @@ function BoxTheNext16Days() {
                         }
                         <br />
                         <br />
-                        <button data-toggle="collapse" data-target="#details10" type="button" className="btn btn-warning btn-for-3">جزئیات</button>
+                        <button data-toggle="collapse" data-target="#details10" type="button" className="btn btn-warning btn-be-days">جزئیات</button>
                         <div className="collapse" id="details10">
                             <div className="details">
                                 <span className="day-details">
@@ -812,8 +812,8 @@ function BoxTheNext16Days() {
                         </div>
                     </div>
                 </div>
-                <div className="col col-6 col-md-6 col-lg-3 col-xl-3" style={{paddingLeft : "3px" , paddingRight : "3px" }}>
-                    <div className="box div-box-3">
+                <div className="col col-6 col-md-6 col-lg-3 col-xl-3 style-for-days">
+                    <div className="box box-days-Section3 ">
                         <h5>{
                             data.data
                                 ? <h5>{data.data[11].datetime}</h5>
@@ -823,7 +823,7 @@ function BoxTheNext16Days() {
                         {shiftIcon(11)}
                         <br />
                         <br />
-                        <div style={{ display: "flex", justifyContent: "space-around", paddingLeft: "40px", paddingRight: "40px" }}>
+                        <div style={{ display: "flex", justifyContent: "space-around"}}>
                             {
                                 data.data
                                     ? <div style={{ display: "flex" }}>
@@ -848,7 +848,7 @@ function BoxTheNext16Days() {
                         }
                         <br />
                         <br />
-                        <button data-toggle="collapse" data-target="#details11" type="button" className="btn btn-warning btn-for-3">جزئیات</button>
+                        <button data-toggle="collapse" data-target="#details11" type="button" className="btn btn-warning btn-be-days">جزئیات</button>
                         <div className="collapse" id="details11">
                             <div className="details">
                                 <span className="day-details">
@@ -884,8 +884,8 @@ function BoxTheNext16Days() {
                         </div>
                     </div>
                 </div>
-                <div className="col col-6 col-md-6 col-lg-3 col-xl-3" style={{paddingLeft : "3px" , paddingRight : "3px" }}>
-                    <div className="box div-box-3">
+                <div className="col col-6 col-md-6 col-lg-3 col-xl-3 style-for-days">
+                    <div className="box box-days-Section3 ">
                         {
                             data.data
                                 ? <h5>{data.data[12].datetime}</h5>
@@ -895,7 +895,7 @@ function BoxTheNext16Days() {
                         {shiftIcon(12)}
                         <br />
                         <br />
-                        <div style={{ display: "flex", justifyContent: "space-around", paddingLeft: "40px", paddingRight: "40px" }}>
+                        <div style={{ display: "flex", justifyContent: "space-around"}}>
                             {
                                 data.data
                                     ? <div style={{ display: "flex" }}>
@@ -920,7 +920,7 @@ function BoxTheNext16Days() {
                         }
                         <br />
                         <br />
-                        <button data-toggle="collapse" data-target="#details12" type="button" className="btn btn-warning btn-for-3">جزئیات</button>
+                        <button data-toggle="collapse" data-target="#details12" type="button" className="btn btn-warning btn-be-days">جزئیات</button>
                         <div className="collapse" id="details12">
                             <div className="details">
                                 <span className="day-details">
@@ -956,8 +956,8 @@ function BoxTheNext16Days() {
                         </div>
                     </div>
                 </div>
-                <div className="col col-6 col-md-6 col-lg-3 col-xl-3" style={{paddingLeft : "3px" , paddingRight : "3px" }}>
-                    <div className="box div-box-3">
+                <div className="col col-6 col-md-6 col-lg-3 col-xl-3 style-for-days">
+                    <div className="box box-days-Section3 ">
                         <h5>{
                             data.data
                                 ? <h5>{data.data[13].datetime}</h5>
@@ -968,7 +968,7 @@ function BoxTheNext16Days() {
                         {shiftIcon(13)}
                         <br />
                         <br />
-                        <div style={{ display: "flex", justifyContent: "space-around", paddingLeft: "40px", paddingRight: "40px" }}>
+                        <div style={{ display: "flex", justifyContent: "space-around"}}>
                             {
                                 data.data
                                     ? <div style={{ display: "flex" }}>
@@ -993,7 +993,7 @@ function BoxTheNext16Days() {
                         }
                         <br />
                         <br />
-                        <button data-toggle="collapse" data-target="#details13" type="button" className="btn btn-warning btn-for-3">جزئیات</button>
+                        <button data-toggle="collapse" data-target="#details13" type="button" className="btn btn-warning btn-be-days">جزئیات</button>
                         <div className="collapse" id="details13">
                             <div className="details">
                                 <span className="day-details">
@@ -1029,8 +1029,8 @@ function BoxTheNext16Days() {
                         </div>
                     </div>
                 </div>
-                <div className="col col-6 col-md-6 col-lg-3 col-xl-3" style={{paddingLeft : "3px" , paddingRight : "3px" }}>
-                    <div className="box div-box-3">
+                <div className="col col-6 col-md-6 col-lg-3 col-xl-3 style-for-days">
+                    <div className="box box-days-Section3 ">
                         {
                             data.data
                                 ? <h5>{data.data[14].datetime}</h5>
@@ -1041,7 +1041,7 @@ function BoxTheNext16Days() {
                         {shiftIcon(14)}
                         <br />
                         <br />
-                        <div style={{ display: "flex", justifyContent: "space-around", paddingLeft: "40px", paddingRight: "40px" }}>
+                        <div style={{ display: "flex", justifyContent: "space-around"}}>
                             {
                                 data.data
                                     ? <div style={{ display: "flex" }}>
@@ -1066,7 +1066,7 @@ function BoxTheNext16Days() {
                         }
                         <br />
                         <br />
-                        <button data-toggle="collapse" data-target="#details14" type="button" className="btn btn-warning btn-for-3">جزئیات</button>
+                        <button data-toggle="collapse" data-target="#details14" type="button" className="btn btn-warning btn-be-days">جزئیات</button>
                         <div className="collapse" id="details14">
                             <div className="details">
                                 <span className="day-details">
@@ -1102,8 +1102,8 @@ function BoxTheNext16Days() {
                         </div>
                     </div>
                 </div>
-                <div className="col col-6 col-md-6 col-lg-3 col-xl-3" style={{paddingLeft : "3px" , paddingRight : "3px" }}>
-                    <div className="box div-box-3">
+                <div className="col col-6 col-md-6 col-lg-3 col-xl-3 style-for-days">
+                    <div className="box box-days-Section3 ">
                         <h5>{
                             data.data
                                 ? <h5>{data.data[15].datetime}</h5>
@@ -1113,7 +1113,7 @@ function BoxTheNext16Days() {
                         {shiftIcon(15)}
                         <br />
                         <br />
-                        <div style={{ display: "flex", justifyContent: "space-around", paddingLeft: "40px", paddingRight: "40px" }}>
+                        <div style={{ display: "flex", justifyContent: "space-around"}}>
                             {
                                 data.data
                                     ? <div style={{ display: "flex" }}>
@@ -1138,7 +1138,7 @@ function BoxTheNext16Days() {
                         }
                         <br />
                         <br />
-                        <button data-toggle="collapse" data-target="#details15" type="button" className="btn btn-warning btn-for-3">جزئیات</button>
+                        <button data-toggle="collapse" data-target="#details15" type="button" className="btn btn-warning btn-be-days">جزئیات</button>
                         <div className="collapse" id="details15">
                             <div className="details">
                                 <span className="day-details">

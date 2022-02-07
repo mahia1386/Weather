@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import appStyle from "./../style/react.css";
 import style from '../Font/style.css';
 
-function BoxNew() {
+function BoxNow() {
 
     const [data, setData] = useState({ data: "" });
     const [tempToday, settempToday] = useState({ data: "" });
@@ -97,7 +97,7 @@ function BoxNew() {
 
     return (
         <>
-            <div className="box row" id="part-1" style={{ marginLeft: "0px", marginRight: "0px"}}>
+            <div className="box row" id="part-1">
                 <div className="col col-12 col-md-12 col-lg-3 col-xl-3 icon-weather">
                     {shiftIcon()}
                 </div>
@@ -134,9 +134,9 @@ function BoxNew() {
                     </div>
                     <br />
                 </div>
-                <div className="col col-12 col-md-12 col-lg-6 col-xl-6 box icon-weather" style={{ marginTop: "0px" }}>
+                <div className="col col-12 col-md-12 col-lg-6 col-xl-6 box icon-weather">
                     {tempToday.data
-                        ? <span style={{paddingTop:"80px"}}>بر اساس آخرین داده در تاریخ {tempToday.data[0].ob_time}</span>
+                        ? <span>بر اساس آخرین داده در تاریخ {tempToday.data[0].ob_time}</span>
                         : null
                     }
                 </div>
@@ -145,4 +145,4 @@ function BoxNew() {
     );
 }
 
-export default BoxNew;
+export default BoxNow;

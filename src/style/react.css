@@ -19,15 +19,15 @@ hr{
     background-color: #ffc107;
 }
 
-.box-2-2{
+.Details-today-weather{
     padding: 10px 10px;
 }
 
-.div-box-3{
+.box-days-Section3{
     text-align: center;
 }
 
-.btn-for-3{
+.btn-be-days{
     height: 30px;
     font-size: 12px;
 }
@@ -55,5 +55,15 @@ a:hover{
 }
 
 .icon-weather{
-text-align:  center;
+    text-align: center;
+}
+
+.style-for-days{
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+.max-min-for-days{
+    display: flex;
+    justify-content: space-around;
 }

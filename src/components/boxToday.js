@@ -53,7 +53,7 @@ function BoxToday() {
             </div>
             <br />
             <div className="row">
-                <div className="col col-12 col-md-12 col-lg-6 col-xl-6 box-2-2">
+                <div className="col col-12 col-md-12 col-lg-6 col-xl-6 Details-today-weather ">
                     <span>
                         رطوبت:
                             {data.data
@@ -87,7 +87,7 @@ function BoxToday() {
                     <br />
                     <br />
                 </div>
-                <div className="col col-12 col-md-12 col-lg-6 col-xl-6 box-2-2">
+                <div className="col col-12 col-md-12 col-lg-6 col-xl-6 Details-today-weather ">
                     <span>
                         باد:
                             {data.data
