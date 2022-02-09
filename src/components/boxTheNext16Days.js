@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import appStyle from "./../style/react.css";
-import style from '../Font/style.css';
+import "./../style/react.css";
+import  "./../Font/style.css";
 
 function BoxTheNext16Days() {
 
+    //API weather
     const [data, setData] = useState({ data: "" });
 
     async function getData() {
@@ -16,77 +17,81 @@ function BoxTheNext16Days() {
         getData();
     }, [])
 
+    //Function to change the icon in changing weather conditions 
     let shiftIcon = (x) => {
         let icon = "";
-        let iconText = data?.data?.[x]?.weather?.code;
+        let code = data?.data?.[x]?.weather?.code;
 
-        if (iconText == 610) {
+        if (code === 610) {
 
             icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/48/000000/external-snowy-weather-those-icons-lineal-color-those-icons-1.png";
 
-        } else if (iconText == 804) {
+        } else if (code === 804) {
 
             icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/48/000000/external-cloudy-weather-those-icons-lineal-color-those-icons-1.png";
 
-        } else if (iconText == 803 || iconText == 801 || iconText == 802) {
+        } else if (code === 803 || code === 801 || code === 802) {
 
             icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/48/000000/external-cloudy-weather-those-icons-lineal-color-those-icons.png";
 
-        } else if (iconText == 520) {
+        } else if (code === 520) {
 
             icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/48/000000/external-rain-weather-those-icons-lineal-color-those-icons.png";
 
-        } else if (iconText == 200 || iconText == 201 || iconText == 230 || iconText == 231) {
+        } else if (code === 200 || code === 201 || code === 230 || code === 231) {
 
             icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/48/000000/external-storm-weather-those-icons-lineal-color-those-icons-3.png";
 
-        } else if (iconText == 202 || iconText == 232) {
+        } else if (code === 202 || code === 232) {
 
             icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/48/000000/external-storm-weather-those-icons-lineal-color-those-icons-1.png";
 
-        } else if (iconText == 233 || iconText == 511) {
+        } else if (code === 233 || code === 511) {
 
             icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/48/000000/external-hail-weather-those-icons-lineal-color-those-icons.png";
 
-        } else if (iconText == 300 || iconText == 301 || iconText == 500 || iconText == 501 || iconText == 522 || iconText == 302) {
+        } else if (code === 300 || code === 301 || code === 500 || code === 501 || code === 522 || code === 302) {
 
             icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/48/000000/external-rain-weather-those-icons-lineal-color-those-icons.png";
 
-        } else if (iconText == 502 || iconText == 520 || iconText == 521 || iconText == 900) {
+        } else if (code === 502 || code === 520 || code === 521 || code === 900) {
 
             icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/48/000000/external-humidity-weather-those-icons-lineal-color-those-icons.png";
 
-        } else if (iconText == 600 || iconText == 601 || iconText == 602 || iconText == 621 || iconText == 622) {
+        } else if (code === 600 || code === 601 || code === 602 || code === 621 || code === 622) {
 
             icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/48/000000/external-snow-weather-those-icons-lineal-color-those-icons.png";
 
-        } else if (iconText == 611 || iconText == 612) {
+        } else if (code === 611 || code === 612) {
 
             icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/48/000000/external-windy-weather-those-icons-lineal-color-those-icons-2.png";
 
-        } else if (iconText == 623) {
+        } else if (code === 623) {
 
             icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/48/000000/external-hurricane-weather-those-icons-lineal-color-those-icons.png";
 
-        } else if (iconText == 700 || iconText == 711 || iconText == 721 || iconText == 731 || iconText == 741 || iconText == 751) {
+        } else if (code === 700 || code === 711 || code === 721 || code === 731 || code === 741 || code === 751) {
 
             icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/48/000000/external-fog-weather-those-icons-lineal-color-those-icons.png";
 
-        } else if (iconText == 800) {
+        } else if (code === 800) {
 
             icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/48/000000/external-sun-weather-those-icons-lineal-color-those-icons.png";
 
         }
 
         return (
-            <img className="img-for-3" src={icon} />
+            <img className="img-for-3" src={icon} alt="Icon weather" />
         )
     }
 
     return (
         <div className="box box-The-next-16-days" id="part-3">
+
             <h5>آب و هوای  16 روز آینده</h5>
+
             <div className="row">
+
                 <div className="col col-6 col-md-6 col-lg-3 col-xl-3 style-for-days">
                     <div className="box box-days-Section3 ">
                         {
@@ -102,7 +107,7 @@ function BoxTheNext16Days() {
                             {
                                 data.data
                                     ? <div style={{ display: "flex" }}>
-                                        <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-temperature-weather-those-icons-lineal-color-those-icons.png" width="24px" height="24px" />
+                                        <img alt="temp" src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-temperature-weather-those-icons-lineal-color-those-icons.png" width="24px" height="24px" />
                                         <p>{Math.trunc(data.data[1].max_temp)}°</p>
                                     </div>
                                     : null
@@ -110,7 +115,7 @@ function BoxTheNext16Days() {
                             {
                                 data.data
                                     ? <div style={{ display: "flex" }}>
-                                        <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-thermometer-weather-those-icons-lineal-color-those-icons-1.png" width="24px" height="24px" />
+                                        <img alt="temp" src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-thermometer-weather-those-icons-lineal-color-those-icons-1.png" width="24px" height="24px" />
                                         <p>{Math.trunc(data.data[1].min_temp)}°</p>
                                     </div>
                                     : null
@@ -134,7 +139,9 @@ function BoxTheNext16Days() {
                                 </span>
                                 <br />
                                 <hr />
-                                <span className="day-details">جهت باد
+                                <span className="day-details">
+                                    
+                                    جهت باد :
                                         {data.data
                                         ? <span className="span-from-1-2"> {data.data[1].wind_cdir} </span>
                                         : null}
@@ -159,6 +166,7 @@ function BoxTheNext16Days() {
                         </div>
                     </div>
                 </div>
+
                 <div className="col col-6 col-md-6 col-lg-3 col-xl-3 style-for-days">
                     <div className="box box-days-Section3 ">
                         <h5>{
@@ -174,7 +182,7 @@ function BoxTheNext16Days() {
                             {
                                 data.data
                                     ? <div style={{ display: "flex" }}>
-                                        <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-temperature-weather-those-icons-lineal-color-those-icons.png" width="24px" height="24px" />
+                                        <img alt="temp" src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-temperature-weather-those-icons-lineal-color-those-icons.png" width="24px" height="24px" />
                                         <p>{Math.trunc(data.data[2].max_temp)}°</p>
                                     </div>
                                     : null
@@ -182,7 +190,7 @@ function BoxTheNext16Days() {
                             {
                                 data.data
                                     ? <div style={{ display: "flex" }}>
-                                        <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-thermometer-weather-those-icons-lineal-color-those-icons-1.png" width="24px" height="24px" />
+                                        <img alt="temp" src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-thermometer-weather-those-icons-lineal-color-those-icons-1.png" width="24px" height="24px" />
                                         <p>{Math.trunc(data.data[2].min_temp)}°</p>
                                     </div>
                                     : null
@@ -206,7 +214,8 @@ function BoxTheNext16Days() {
                                 </span>
                                 <br />
                                 <hr />
-                                <span className="day-details">جهت باد
+                                <span className="day-details">
+                                    جهت باد :
                                         {data.data
                                         ? <span className="span-from-1-2"> {data.data[2].wind_cdir} </span>
                                         : null}
@@ -231,6 +240,7 @@ function BoxTheNext16Days() {
                         </div>
                     </div>
                 </div>
+
                 <div className="col col-6 col-md-6 col-lg-3 col-xl-3 style-for-days">
                     <div className="box box-days-Section3 ">
                         <h5>{
@@ -246,7 +256,7 @@ function BoxTheNext16Days() {
                             {
                                 data.data
                                     ? <div style={{ display: "flex" }}>
-                                        <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-temperature-weather-those-icons-lineal-color-those-icons.png" width="24px" height="24px" />
+                                        <img alt="temp" src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-temperature-weather-those-icons-lineal-color-those-icons.png" width="24px" height="24px" />
                                         <p>{Math.trunc(data.data[3].max_temp)}°</p>
                                     </div>
                                     : null
@@ -254,7 +264,7 @@ function BoxTheNext16Days() {
                             {
                                 data.data
                                     ? <div style={{ display: "flex" }}>
-                                        <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-thermometer-weather-those-icons-lineal-color-those-icons-1.png" width="24px" height="24px" />
+                                        <img alt="temp" src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-thermometer-weather-those-icons-lineal-color-those-icons-1.png" width="24px" height="24px" />
                                         <p>{Math.trunc(data.data[3].min_temp)}°</p>
                                     </div>
                                     : null
@@ -278,7 +288,8 @@ function BoxTheNext16Days() {
                                 </span>
                                 <br />
                                 <hr />
-                                <span className="day-details">جهت باد
+                                <span className="day-details">
+                                    جهت باد :
                                         {data.data
                                         ? <span className="span-from-1-2"> {data.data[3].wind_cdir} </span>
                                         : null}
@@ -303,6 +314,7 @@ function BoxTheNext16Days() {
                         </div>
                     </div>
                 </div>
+
                 <div className="col col-6 col-md-6 col-lg-3 col-xl-3 style-for-days">
                     <div className="box box-days-Section3 ">
                         <h5>{
@@ -318,7 +330,7 @@ function BoxTheNext16Days() {
                             {
                                 data.data
                                     ? <div style={{ display: "flex" }}>
-                                        <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-temperature-weather-those-icons-lineal-color-those-icons.png" width="24px" height="24px" />
+                                        <img alt="temp" src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-temperature-weather-those-icons-lineal-color-those-icons.png" width="24px" height="24px" />
                                         <p>{Math.trunc(data.data[4].max_temp)}°</p>
                                     </div>
                                     : null
@@ -326,7 +338,7 @@ function BoxTheNext16Days() {
                             {
                                 data.data
                                     ? <div style={{ display: "flex" }}>
-                                        <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-thermometer-weather-those-icons-lineal-color-those-icons-1.png" width="24px" height="24px" />
+                                        <img alt="temp" src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-thermometer-weather-those-icons-lineal-color-those-icons-1.png" width="24px" height="24px" />
                                         <p>{Math.trunc(data.data[4].min_temp)}°</p>
                                     </div>
                                     : null
@@ -350,7 +362,8 @@ function BoxTheNext16Days() {
                                 </span>
                                 <br />
                                 <hr />
-                                <span className="day-details">جهت باد
+                                <span className="day-details">
+                                    جهت باد :
                                         {data.data
                                         ? <span className="span-from-1-2"> {data.data[4].wind_cdir} </span>
                                         : null}
@@ -375,11 +388,17 @@ function BoxTheNext16Days() {
                         </div>
                     </div>
                 </div>
+
             </div>
+
             <br />
+
             <button className="btn btn-warning" data-toggle="collapse" data-target="#demo">آب و هوای روز های آینده</button>
+
             <br/>
+
             <div id="demo" class="collapse row">
+
                 <div className="col col-6 col-md-6 col-lg-3 col-xl-3 style-for-days">
                     <div className="box box-days-Section3 ">
                         {
@@ -395,7 +414,7 @@ function BoxTheNext16Days() {
                             {
                                 data.data
                                     ? <div style={{ display: "flex" }}>
-                                        <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-temperature-weather-those-icons-lineal-color-those-icons.png" width="24px" height="24px" />
+                                        <img alt="temp" src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-temperature-weather-those-icons-lineal-color-those-icons.png" width="24px" height="24px" />
                                         <p>{Math.trunc(data.data[5].max_temp)}°</p>
                                     </div>
                                     : null
@@ -403,7 +422,7 @@ function BoxTheNext16Days() {
                             {
                                 data.data
                                     ? <div style={{ display: "flex" }}>
-                                        <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-thermometer-weather-those-icons-lineal-color-those-icons-1.png" width="24px" height="24px" />
+                                        <img alt="temp" src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-thermometer-weather-those-icons-lineal-color-those-icons-1.png" width="24px" height="24px" />
                                         <p>{Math.trunc(data.data[5].min_temp)}°</p>
                                     </div>
                                     : null
@@ -427,7 +446,8 @@ function BoxTheNext16Days() {
                                 </span>
                                 <br />
                                 <hr />
-                                <span className="day-details">جهت باد
+                                <span className="day-details">
+                                    جهت باد :
                                         {data.data
                                         ? <span className="span-from-1-2"> {data.data[5].wind_cdir} </span>
                                         : null}
@@ -452,6 +472,7 @@ function BoxTheNext16Days() {
                         </div>
                     </div>
                 </div>
+
                 <div className="col col-6 col-md-6 col-lg-3 col-xl-3 style-for-days">
                     <div className="box box-days-Section3 ">
                         <h5>{
@@ -467,7 +488,7 @@ function BoxTheNext16Days() {
                             {
                                 data.data
                                     ? <div style={{ display: "flex" }}>
-                                        <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-temperature-weather-those-icons-lineal-color-those-icons.png" width="24px" height="24px" />
+                                        <img alt="temp" src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-temperature-weather-those-icons-lineal-color-those-icons.png" width="24px" height="24px" />
                                         <p>{Math.trunc(data.data[6].max_temp)}°</p>
                                     </div>
                                     : null
@@ -475,7 +496,7 @@ function BoxTheNext16Days() {
                             {
                                 data.data
                                     ? <div style={{ display: "flex" }}>
-                                        <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-thermometer-weather-those-icons-lineal-color-those-icons-1.png" width="24px" height="24px" />
+                                        <img alt="temp" src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-thermometer-weather-those-icons-lineal-color-those-icons-1.png" width="24px" height="24px" />
                                         <p>{Math.trunc(data.data[6].min_temp)}°</p>
                                     </div>
                                     : null
@@ -499,7 +520,8 @@ function BoxTheNext16Days() {
                                 </span>
                                 <br />
                                 <hr />
-                                <span className="day-details">جهت باد
+                                <span className="day-details">
+                                    جهت باد :
                                         {data.data
                                         ? <span className="span-from-1-2"> {data.data[6].wind_cdir} </span>
                                         : null}
@@ -524,6 +546,7 @@ function BoxTheNext16Days() {
                         </div>
                     </div>
                 </div>
+
                 <div className="col col-6 col-md-6 col-lg-3 col-xl-3 style-for-days">
                     <div className="box box-days-Section3 ">
                         <h5>{
@@ -539,7 +562,7 @@ function BoxTheNext16Days() {
                             {
                                 data.data
                                     ? <div style={{ display: "flex" }}>
-                                        <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-temperature-weather-those-icons-lineal-color-those-icons.png" width="24px" height="24px" />
+                                        <img alt="temp" src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-temperature-weather-those-icons-lineal-color-those-icons.png" width="24px" height="24px" />
                                         <p>{Math.trunc(data.data[7].max_temp)}°</p>
                                     </div>
                                     : null
@@ -547,7 +570,7 @@ function BoxTheNext16Days() {
                             {
                                 data.data
                                     ? <div style={{ display: "flex" }}>
-                                        <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-thermometer-weather-those-icons-lineal-color-those-icons-1.png" width="24px" height="24px" />
+                                        <img alt="temp" src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-thermometer-weather-those-icons-lineal-color-those-icons-1.png" width="24px" height="24px" />
                                         <p>{Math.trunc(data.data[7].min_temp)}°</p>
                                     </div>
                                     : null
@@ -571,7 +594,8 @@ function BoxTheNext16Days() {
                                 </span>
                                 <br />
                                 <hr />
-                                <span className="day-details">جهت باد
+                                <span className="day-details">
+                                    جهت باد :
                                         {data.data
                                         ? <span className="span-from-1-2"> {data.data[7].wind_cdir} </span>
                                         : null}
@@ -596,6 +620,7 @@ function BoxTheNext16Days() {
                         </div>
                     </div>
                 </div>
+
                 <div className="col col-6 col-md-6 col-lg-3 col-xl-3 style-for-days">
                     <div className="box box-days-Section3 ">
                         <h5>{
@@ -611,7 +636,7 @@ function BoxTheNext16Days() {
                             {
                                 data.data
                                     ? <div style={{ display: "flex" }}>
-                                        <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-temperature-weather-those-icons-lineal-color-those-icons.png" width="24px" height="24px" />
+                                        <img alt="temp" src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-temperature-weather-those-icons-lineal-color-those-icons.png" width="24px" height="24px" />
                                         <p>{Math.trunc(data.data[8].max_temp)}°</p>
                                     </div>
                                     : null
@@ -619,7 +644,7 @@ function BoxTheNext16Days() {
                             {
                                 data.data
                                     ? <div style={{ display: "flex" }}>
-                                        <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-thermometer-weather-those-icons-lineal-color-those-icons-1.png" width="24px" height="24px" />
+                                        <img alt="temp" src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-thermometer-weather-those-icons-lineal-color-those-icons-1.png" width="24px" height="24px" />
                                         <p>{Math.trunc(data.data[5].min_temp)}°</p>
                                     </div>
                                     : null
@@ -643,7 +668,8 @@ function BoxTheNext16Days() {
                                 </span>
                                 <br />
                                 <hr />
-                                <span className="day-details">جهت باد
+                                <span className="day-details">
+                                    جهت باد :
                                         {data.data
                                         ? <span className="span-from-1-2"> {data.data[8].wind_cdir} </span>
                                         : null}
@@ -668,6 +694,7 @@ function BoxTheNext16Days() {
                         </div>
                     </div>
                 </div>
+
                 <div className="col col-6 col-md-6 col-lg-3 col-xl-3 style-for-days">
                     <div className="box box-days-Section3 ">
                         {
@@ -683,7 +710,7 @@ function BoxTheNext16Days() {
                             {
                                 data.data
                                     ? <div style={{ display: "flex" }}>
-                                        <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-temperature-weather-those-icons-lineal-color-those-icons.png" width="24px" height="24px" />
+                                        <img alt="temp" src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-temperature-weather-those-icons-lineal-color-those-icons.png" width="24px" height="24px" />
                                         <p>{Math.trunc(data.data[9].max_temp)}°</p>
                                     </div>
                                     : null
@@ -691,7 +718,7 @@ function BoxTheNext16Days() {
                             {
                                 data.data
                                     ? <div style={{ display: "flex" }}>
-                                        <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-thermometer-weather-those-icons-lineal-color-those-icons-1.png" width="24px" height="24px" />
+                                        <img alt="temp" src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-thermometer-weather-those-icons-lineal-color-those-icons-1.png" width="24px" height="24px" />
                                         <p>{Math.trunc(data.data[9].min_temp)}°</p>
                                     </div>
                                     : null
@@ -715,7 +742,8 @@ function BoxTheNext16Days() {
                                 </span>
                                 <br />
                                 <hr />
-                                <span className="day-details">جهت باد
+                                <span className="day-details">
+                                    جهت باد :
                                         {data.data
                                         ? <span className="span-from-1-2"> {data.data[9].wind_cdir} </span>
                                         : null}
@@ -740,6 +768,7 @@ function BoxTheNext16Days() {
                         </div>
                     </div>
                 </div>
+
                 <div className="col col-6 col-md-6 col-lg-3 col-xl-3 style-for-days">
                     <div className="box box-days-Section3 ">
                         <h5>{
@@ -755,7 +784,7 @@ function BoxTheNext16Days() {
                             {
                                 data.data
                                     ? <div style={{ display: "flex" }}>
-                                        <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-temperature-weather-those-icons-lineal-color-those-icons.png" width="24px" height="24px" />
+                                        <img alt="temp" src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-temperature-weather-those-icons-lineal-color-those-icons.png" width="24px" height="24px" />
                                         <p>{Math.trunc(data.data[10].max_temp)}°</p>
                                     </div>
                                     : null
@@ -763,7 +792,7 @@ function BoxTheNext16Days() {
                             {
                                 data.data
                                     ? <div style={{ display: "flex" }}>
-                                        <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-thermometer-weather-those-icons-lineal-color-those-icons-1.png" width="24px" height="24px" />
+                                        <img alt="temp" src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-thermometer-weather-those-icons-lineal-color-those-icons-1.png" width="24px" height="24px" />
                                         <p>{Math.trunc(data.data[10].min_temp)}°</p>
                                     </div>
                                     : null
@@ -787,7 +816,8 @@ function BoxTheNext16Days() {
                                 </span>
                                 <br />
                                 <hr />
-                                <span className="day-details">جهت باد
+                                <span className="day-details">
+                                    جهت باد :
                                         {data.data
                                         ? <span className="span-from-1-2"> {data.data[10].wind_cdir} </span>
                                         : null}
@@ -812,6 +842,7 @@ function BoxTheNext16Days() {
                         </div>
                     </div>
                 </div>
+
                 <div className="col col-6 col-md-6 col-lg-3 col-xl-3 style-for-days">
                     <div className="box box-days-Section3 ">
                         <h5>{
@@ -827,7 +858,7 @@ function BoxTheNext16Days() {
                             {
                                 data.data
                                     ? <div style={{ display: "flex" }}>
-                                        <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-temperature-weather-those-icons-lineal-color-those-icons.png" width="24px" height="24px" />
+                                        <img alt="temp" src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-temperature-weather-those-icons-lineal-color-those-icons.png" width="24px" height="24px" />
                                         <p>{Math.trunc(data.data[11].max_temp)}°</p>
                                     </div>
                                     : null
@@ -835,7 +866,7 @@ function BoxTheNext16Days() {
                             {
                                 data.data
                                     ? <div style={{ display: "flex" }}>
-                                        <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-thermometer-weather-those-icons-lineal-color-those-icons-1.png" width="24px" height="24px" />
+                                        <img alt="temp" src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-thermometer-weather-those-icons-lineal-color-those-icons-1.png" width="24px" height="24px" />
                                         <p>{Math.trunc(data.data[11].min_temp)}°</p>
                                     </div>
                                     : null
@@ -859,7 +890,8 @@ function BoxTheNext16Days() {
                                 </span>
                                 <br />
                                 <hr />
-                                <span className="day-details">جهت باد
+                                <span className="day-details">
+                                    جهت باد :
                                         {data.data
                                         ? <span className="span-from-1-2"> {data.data[11].wind_cdir} </span>
                                         : null}
@@ -884,6 +916,7 @@ function BoxTheNext16Days() {
                         </div>
                     </div>
                 </div>
+
                 <div className="col col-6 col-md-6 col-lg-3 col-xl-3 style-for-days">
                     <div className="box box-days-Section3 ">
                         {
@@ -899,7 +932,7 @@ function BoxTheNext16Days() {
                             {
                                 data.data
                                     ? <div style={{ display: "flex" }}>
-                                        <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-temperature-weather-those-icons-lineal-color-those-icons.png" width="24px" height="24px" />
+                                        <img alt="temp" src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-temperature-weather-those-icons-lineal-color-those-icons.png" width="24px" height="24px" />
                                         <p>{Math.trunc(data.data[12].max_temp)}°</p>
                                     </div>
                                     : null
@@ -907,7 +940,7 @@ function BoxTheNext16Days() {
                             {
                                 data.data
                                     ? <div style={{ display: "flex" }}>
-                                        <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-thermometer-weather-those-icons-lineal-color-those-icons-1.png" width="24px" height="24px" />
+                                        <img alt="temp" src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-thermometer-weather-those-icons-lineal-color-those-icons-1.png" width="24px" height="24px" />
                                         <p>{Math.trunc(data.data[12].min_temp)}°</p>
                                     </div>
                                     : null
@@ -931,7 +964,8 @@ function BoxTheNext16Days() {
                                 </span>
                                 <br />
                                 <hr />
-                                <span className="day-details">جهت باد
+                                <span className="day-details">
+                                    جهت باد :
                                         {data.data
                                         ? <span className="span-from-1-2"> {data.data[12].wind_cdir} </span>
                                         : null}
@@ -956,6 +990,7 @@ function BoxTheNext16Days() {
                         </div>
                     </div>
                 </div>
+
                 <div className="col col-6 col-md-6 col-lg-3 col-xl-3 style-for-days">
                     <div className="box box-days-Section3 ">
                         <h5>{
@@ -972,7 +1007,7 @@ function BoxTheNext16Days() {
                             {
                                 data.data
                                     ? <div style={{ display: "flex" }}>
-                                        <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-temperature-weather-those-icons-lineal-color-those-icons.png" width="24px" height="24px" />
+                                        <img alt="temp" src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-temperature-weather-those-icons-lineal-color-those-icons.png" width="24px" height="24px" />
                                         <p>{Math.trunc(data.data[13].max_temp)}°</p>
                                     </div>
                                     : null
@@ -980,7 +1015,7 @@ function BoxTheNext16Days() {
                             {
                                 data.data
                                     ? <div style={{ display: "flex" }}>
-                                        <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-thermometer-weather-those-icons-lineal-color-those-icons-1.png" width="24px" height="24px" />
+                                        <img alt="temp" src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-thermometer-weather-those-icons-lineal-color-those-icons-1.png" width="24px" height="24px" />
                                         <p>{Math.trunc(data.data[13].min_temp)}°</p>
                                     </div>
                                     : null
@@ -1004,7 +1039,8 @@ function BoxTheNext16Days() {
                                 </span>
                                 <br />
                                 <hr />
-                                <span className="day-details">جهت باد
+                                <span className="day-details">
+                                    جهت باد :
                                         {data.data
                                         ? <span className="span-from-1-2"> {data.data[13].wind_cdir} </span>
                                         : null}
@@ -1029,6 +1065,7 @@ function BoxTheNext16Days() {
                         </div>
                     </div>
                 </div>
+
                 <div className="col col-6 col-md-6 col-lg-3 col-xl-3 style-for-days">
                     <div className="box box-days-Section3 ">
                         {
@@ -1045,7 +1082,7 @@ function BoxTheNext16Days() {
                             {
                                 data.data
                                     ? <div style={{ display: "flex" }}>
-                                        <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-temperature-weather-those-icons-lineal-color-those-icons.png" width="24px" height="24px" />
+                                        <img alt="temp" src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-temperature-weather-those-icons-lineal-color-those-icons.png" width="24px" height="24px" />
                                         <p>{Math.trunc(data.data[14].max_temp)}°</p>
                                     </div>
                                     : null
@@ -1053,7 +1090,7 @@ function BoxTheNext16Days() {
                             {
                                 data.data
                                     ? <div style={{ display: "flex" }}>
-                                        <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-thermometer-weather-those-icons-lineal-color-those-icons-1.png" width="24px" height="24px" />
+                                        <img alt="temp" src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-thermometer-weather-those-icons-lineal-color-those-icons-1.png" width="24px" height="24px" />
                                         <p>{Math.trunc(data.data[14].min_temp)}°</p>
                                     </div>
                                     : null
@@ -1077,7 +1114,8 @@ function BoxTheNext16Days() {
                                 </span>
                                 <br />
                                 <hr />
-                                <span className="day-details">جهت باد
+                                <span className="day-details">
+                                    جهت باد :
                                         {data.data
                                         ? <span className="span-from-1-2"> {data.data[14].wind_cdir} </span>
                                         : null}
@@ -1102,6 +1140,7 @@ function BoxTheNext16Days() {
                         </div>
                     </div>
                 </div>
+
                 <div className="col col-6 col-md-6 col-lg-3 col-xl-3 style-for-days">
                     <div className="box box-days-Section3 ">
                         <h5>{
@@ -1117,7 +1156,7 @@ function BoxTheNext16Days() {
                             {
                                 data.data
                                     ? <div style={{ display: "flex" }}>
-                                        <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-temperature-weather-those-icons-lineal-color-those-icons.png" width="24px" height="24px" />
+                                        <img alt="temp" src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-temperature-weather-those-icons-lineal-color-those-icons.png" width="24px" height="24px" />
                                         <p>{Math.trunc(data.data[15].max_temp)}°</p>
                                     </div>
                                     : null
@@ -1125,7 +1164,7 @@ function BoxTheNext16Days() {
                             {
                                 data.data
                                     ? <div style={{ display: "flex" }}>
-                                        <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-thermometer-weather-those-icons-lineal-color-those-icons-1.png" width="24px" height="24px" />
+                                        <img alt="temp" src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-thermometer-weather-those-icons-lineal-color-those-icons-1.png" width="24px" height="24px" />
                                         <p>{Math.trunc(data.data[15].min_temp)}°</p>
                                     </div>
                                     : null
@@ -1149,7 +1188,8 @@ function BoxTheNext16Days() {
                                 </span>
                                 <br />
                                 <hr />
-                                <span className="day-details">:جهت باد
+                                <span className="day-details">:
+                                جهت باد :
                                         {data.data
                                         ? <span className="span-from-1-2"> {data.data[15].wind_cdir} </span>
                                         : null}
@@ -1174,7 +1214,9 @@ function BoxTheNext16Days() {
                         </div>
                     </div>
                 </div>
+
             </div>
+            
         </div>
     );
 }

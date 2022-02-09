@@ -1,6 +1,7 @@
 body{
     direction: rtl;
-    background-color: rgb(43, 43, 43);
+    /* background-color: rgb(43, 43, 43); */
+    background-image: url("./../image/wellpaper.jpg");
     color: rgb(255, 255, 255);
     font-family: IRANSans;
     text-align: right;

@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
-import appStyle from "./../style/react.css";
-import style from '../Font/style.css';
+import "./../style/react.css";
+import "./../Font/style.css";
 
 function BoxToday() {
 
+    //API weather
+
+    //Data for the next 16 days 
     const [data, setData] = useState({ data: "" });
-    const [tempToday, settempToday] = useState({ data: "" });
 
     async function getData() {
         let data = await fetch('https://api.weatherbit.io/v2.0/forecast/daily?city=Berlin&country=DE&key=e18186b3a3324db780a0f350eeba7098');
@@ -13,6 +15,8 @@ function BoxToday() {
         setData(data);
     }
 
+    //Data for now 
+    const [tempToday, settempToday] = useState({ data: "" });
 
     async function getTemp() {
         let tempToday = await fetch('https://api.weatherbit.io/v2.0/current?city=Berlin&country=DE&key=e18186b3a3324db780a0f350eeba7098');
@@ -30,14 +34,12 @@ function BoxToday() {
             <div className="row">
                 <h5 className="col col-12 col-md-12 col-lg-7 col-xl-7" style={{ textAlign: "right" }}>آب و هوای امروز برلین</h5>
                 <br />
-                <br />
-                <br />
                 <div className="col col-12 col-md-12 col-lg-5 col-xl-5 row">
                     <div className="col col-6 icon-weather">
                         {tempToday.data
                             ? <span>
                                 {tempToday.data[0].sunset}
-                                <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/48/000000/external-sunset-weather-those-icons-lineal-color-those-icons.png" />
+                                <img alt="temp" src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/48/000000/external-sunset-weather-those-icons-lineal-color-those-icons.png" />
                             </span>
                             : null}
                     </div>
@@ -45,7 +47,7 @@ function BoxToday() {
                         {tempToday.data
                             ? <span>
                                 {tempToday.data[0].sunrise}
-                                <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/48/000000/external-sunrise-weather-those-icons-lineal-color-those-icons.png" />
+                                <img alt="temp" src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/48/000000/external-sunrise-weather-those-icons-lineal-color-those-icons.png" />
                             </span>
                             : null}
                     </div>
