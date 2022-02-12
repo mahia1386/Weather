@@ -1,11 +1,19 @@
 import React, { useEffect, useState } from "react";
 import "./../style/react.css";
-import  "./../Font/style.css";
+import "./../Font/style.css";
+
 
 function BoxTheNext16Days() {
 
     //API weather
     const [data, setData] = useState({ data: "" });
+    const [tempToday, settempToday] = useState({ data: "" });
+
+    async function getTemp() {
+        let tempToday = await fetch('https://api.weatherbit.io/v2.0/current?city=Berlin&country=DE&key=e18186b3a3324db780a0f350eeba7098');
+        tempToday = await tempToday.json()
+        settempToday(tempToday)
+    }
 
     async function getData() {
         let data = await fetch('https://api.weatherbit.io/v2.0/forecast/daily?city=Berlin&country=DE&key=e18186b3a3324db780a0f350eeba7098');
@@ -15,12 +23,14 @@ function BoxTheNext16Days() {
 
     useEffect(() => {
         getData();
-    }, [])
+        getTemp();
+    }, []);
 
     //Function to change the icon in changing weather conditions 
-    let shiftIcon = (x) => {
+    function chengeIcon(number) {
+
         let icon = "";
-        let code = data?.data?.[x]?.weather?.code;
+        let code = data?.data?.[number]?.weather?.code;
 
         if (code === 610) {
 
@@ -82,7 +92,7 @@ function BoxTheNext16Days() {
 
         return (
             <img className="img-for-3" src={icon} alt="Icon weather" />
-        )
+        );
     }
 
     return (
@@ -100,7 +110,7 @@ function BoxTheNext16Days() {
                                 : null
                         }
                         <br />
-                        {shiftIcon(1)}
+                        {chengeIcon(1)}
                         <br />
                         <br />
                         <div className="max-min-for-days">
@@ -140,7 +150,7 @@ function BoxTheNext16Days() {
                                 <br />
                                 <hr />
                                 <span className="day-details">
-                                    
+
                                     جهت باد :
                                         {data.data
                                         ? <span className="span-from-1-2"> {data.data[1].wind_cdir} </span>
@@ -175,10 +185,10 @@ function BoxTheNext16Days() {
                                 : null
                         }</h5>
                         <br />
-                        {shiftIcon(2)}
+                        {chengeIcon(2)}
                         <br />
                         <br />
-                        <div style={{ display: "flex", justifyContent: "space-around"}}>
+                        <div style={{ display: "flex", justifyContent: "space-around" }}>
                             {
                                 data.data
                                     ? <div style={{ display: "flex" }}>
@@ -249,10 +259,10 @@ function BoxTheNext16Days() {
                                 : null
                         }</h5>
                         <br />
-                        {shiftIcon(3)}
+                        {chengeIcon(3)}
                         <br />
                         <br />
-                        <div style={{ display: "flex", justifyContent: "space-around"}}>
+                        <div style={{ display: "flex", justifyContent: "space-around" }}>
                             {
                                 data.data
                                     ? <div style={{ display: "flex" }}>
@@ -323,10 +333,10 @@ function BoxTheNext16Days() {
                                 : null
                         }</h5>
                         <br />
-                        {shiftIcon(4)}
+                        {chengeIcon(4)}
                         <br />
                         <br />
-                        <div style={{ display: "flex", justifyContent: "space-around"}}>
+                        <div style={{ display: "flex", justifyContent: "space-around" }}>
                             {
                                 data.data
                                     ? <div style={{ display: "flex" }}>
@@ -395,7 +405,7 @@ function BoxTheNext16Days() {
 
             <button className="btn btn-warning" data-toggle="collapse" data-target="#demo">آب و هوای روز های آینده</button>
 
-            <br/>
+            <br />
 
             <div id="demo" class="collapse row">
 
@@ -407,10 +417,10 @@ function BoxTheNext16Days() {
                                 : null
                         }
                         <br />
-                        {shiftIcon(5)}
+                        {chengeIcon(5)}
                         <br />
                         <br />
-                        <div style={{ display: "flex", justifyContent: "space-around"}}>
+                        <div style={{ display: "flex", justifyContent: "space-around" }}>
                             {
                                 data.data
                                     ? <div style={{ display: "flex" }}>
@@ -481,10 +491,10 @@ function BoxTheNext16Days() {
                                 : null
                         }</h5>
                         <br />
-                        {shiftIcon(6)}
+                        {chengeIcon(6)}
                         <br />
                         <br />
-                        <div style={{ display: "flex", justifyContent: "space-around"}}>
+                        <div style={{ display: "flex", justifyContent: "space-around" }}>
                             {
                                 data.data
                                     ? <div style={{ display: "flex" }}>
@@ -555,10 +565,10 @@ function BoxTheNext16Days() {
                                 : null
                         }</h5>
                         <br />
-                        {shiftIcon(7)}
+                        {chengeIcon(7)}
                         <br />
                         <br />
-                        <div style={{ display: "flex", justifyContent: "space-around"}}>
+                        <div style={{ display: "flex", justifyContent: "space-around" }}>
                             {
                                 data.data
                                     ? <div style={{ display: "flex" }}>
@@ -629,10 +639,10 @@ function BoxTheNext16Days() {
                                 : null
                         }</h5>
                         <br />
-                        {shiftIcon(8)}
+                        {chengeIcon(8)}
                         <br />
                         <br />
-                        <div style={{ display: "flex", justifyContent: "space-around"}}>
+                        <div style={{ display: "flex", justifyContent: "space-around" }}>
                             {
                                 data.data
                                     ? <div style={{ display: "flex" }}>
@@ -703,10 +713,10 @@ function BoxTheNext16Days() {
                                 : null
                         }
                         <br />
-                        {shiftIcon(9)}
+                        {chengeIcon(9)}
                         <br />
                         <br />
-                        <div style={{ display: "flex", justifyContent: "space-around"}}>
+                        <div style={{ display: "flex", justifyContent: "space-around" }}>
                             {
                                 data.data
                                     ? <div style={{ display: "flex" }}>
@@ -777,10 +787,10 @@ function BoxTheNext16Days() {
                                 : null
                         }</h5>
                         <br />
-                        {shiftIcon(10)}
+                        {chengeIcon(10)}
                         <br />
                         <br />
-                        <div style={{ display: "flex", justifyContent: "space-around"}}>
+                        <div style={{ display: "flex", justifyContent: "space-around" }}>
                             {
                                 data.data
                                     ? <div style={{ display: "flex" }}>
@@ -851,10 +861,10 @@ function BoxTheNext16Days() {
                                 : null
                         }</h5>
                         <br />
-                        {shiftIcon(11)}
+                        {chengeIcon(11)}
                         <br />
                         <br />
-                        <div style={{ display: "flex", justifyContent: "space-around"}}>
+                        <div style={{ display: "flex", justifyContent: "space-around" }}>
                             {
                                 data.data
                                     ? <div style={{ display: "flex" }}>
@@ -925,10 +935,10 @@ function BoxTheNext16Days() {
                                 : null
                         }
                         <br />
-                        {shiftIcon(12)}
+                        {chengeIcon(12)}
                         <br />
                         <br />
-                        <div style={{ display: "flex", justifyContent: "space-around"}}>
+                        <div style={{ display: "flex", justifyContent: "space-around" }}>
                             {
                                 data.data
                                     ? <div style={{ display: "flex" }}>
@@ -1000,10 +1010,10 @@ function BoxTheNext16Days() {
                         }</h5>
                         <br />
 
-                        {shiftIcon(13)}
+                        {chengeIcon(13)}
                         <br />
                         <br />
-                        <div style={{ display: "flex", justifyContent: "space-around"}}>
+                        <div style={{ display: "flex", justifyContent: "space-around" }}>
                             {
                                 data.data
                                     ? <div style={{ display: "flex" }}>
@@ -1075,10 +1085,10 @@ function BoxTheNext16Days() {
                         }
                         <br />
 
-                        {shiftIcon(14)}
+                        {chengeIcon(14)}
                         <br />
                         <br />
-                        <div style={{ display: "flex", justifyContent: "space-around"}}>
+                        <div style={{ display: "flex", justifyContent: "space-around" }}>
                             {
                                 data.data
                                     ? <div style={{ display: "flex" }}>
@@ -1149,10 +1159,10 @@ function BoxTheNext16Days() {
                                 : null
                         }</h5>
                         <br />
-                        {shiftIcon(15)}
+                        {chengeIcon(15)}
                         <br />
                         <br />
-                        <div style={{ display: "flex", justifyContent: "space-around"}}>
+                        <div style={{ display: "flex", justifyContent: "space-around" }}>
                             {
                                 data.data
                                     ? <div style={{ display: "flex" }}>
@@ -1216,7 +1226,7 @@ function BoxTheNext16Days() {
                 </div>
 
             </div>
-            
+
         </div>
     );
 }
