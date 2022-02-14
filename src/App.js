@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MatherComponent from "./components/MatherComponent";
 import AboutMe from "./components/AboutMe";
+import NoPage from "./components/NoPage";
 
 
 function App() {
