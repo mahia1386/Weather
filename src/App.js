@@ -1,11 +1,8 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import MatherComponent from "./components/MatherComponent";
 import AboutMe from "./components/AboutMe";
-import NoPage from "./components/NoPage";
 import Layout from "./components/Layout";
-
-
 
 function App() {
     return (

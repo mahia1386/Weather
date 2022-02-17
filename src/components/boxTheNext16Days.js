@@ -139,7 +139,7 @@ function BoxTheNext16Days() {
                         <br />
                         <br />
                         <button type="button" className="btn btn-warning btn-be-days" data-toggle="collapse" data-target="#datails1">جزئیات</button>
-                        <div id="datails1" class="collapse">
+                        <div id="datails1" className="collapse">
                             <div className="details">
                                 <span className="day-details">
                                     باد :
@@ -407,7 +407,7 @@ function BoxTheNext16Days() {
 
             <br />
 
-            <div id="demo" class="collapse row">
+            <div id="demo" className="collapse row">
 
                 <div className="col col-6 col-md-6 col-lg-3 col-xl-3 style-for-days">
                     <div className="box box-days-Section3 ">

@@ -4,26 +4,25 @@ import { Link, Outlet } from "react-router-dom";;
 function Layout() {
     return (
         <>
-            <header className="row" style={{
-                padding: "10px",
-                backgroundColor: '#ffc107',
-                display: 'flex',
-                marginLeft: "0px",
-                marginRight: "0px",
-                color: "black"
-            }}>
-
-                <div style={{ display: 'flex' }} className="col col-2">
-                    <img src="https://img.icons8.com/doodle/48/000000/apple-weather.png" alt="logo" />
-                    <div style={{ marginRight: "10px", paddingTop: "10px" }}>آب و هوای امروز</div>
+            <nav className="navbar navbar-expand-lg bg-warning navbar-dark nav-style">
+                <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navb">
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+                <div className="collapse navbar-collapse" id="navb">
+                    <ul className="navbar-nav mr-auto">
+                        <li className="nav-item">
+                            <Link to="/about" className="nav-link link-style">درباره ما</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link to="/" className="nav-link link-style">خانه</Link>
+                        </li>
+                    </ul>
                 </div>
-
-                <div className="col col-10" style={{ marginTop: "12px"}}>
-                    <Link to="/about" style={{ color: "black"}}>درباره ما</Link>
-                    <Link to="/">خانه</Link>
+                <div className="navbar-brand" style={{ display: "flex" }}>
+                    <div className="logo-text">آب و هوای امروز</div>
+                    <img src="https://img.icons8.com/doodle/48/000000/apple-weather.png" alt="logo" className="logo" />
                 </div>
-                
-            </header>
+            </nav>
             <Outlet />
         </>
     );
