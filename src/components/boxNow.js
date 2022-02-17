@@ -34,59 +34,59 @@ function BoxNow() {
 
         if (code === 610) {
 
-            icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/48/000000/external-snowy-weather-those-icons-lineal-color-those-icons-1.png";
+            icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/96/000000/external-snowy-weather-those-icons-lineal-color-those-icons-1.png";
 
         } else if (code === 804) {
 
-            icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/48/000000/external-cloudy-weather-those-icons-lineal-color-those-icons-1.png";
+            icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/96/000000/external-cloudy-weather-those-icons-lineal-color-those-icons-1.png";
 
         } else if (code === 803 || code === 801 || code === 802) {
 
-            icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/48/000000/external-cloudy-weather-those-icons-lineal-color-those-icons.png";
+            icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/96/000000/external-cloudy-weather-those-icons-lineal-color-those-icons.png";
 
         } else if (code === 520) {
 
-            icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/48/000000/external-rain-weather-those-icons-lineal-color-those-icons.png";
+            icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/96/000000/external-rain-weather-those-icons-lineal-color-those-icons.png";
 
         } else if (code === 200 || code === 201 || code === 230 || code === 231) {
 
-            icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/48/000000/external-storm-weather-those-icons-lineal-color-those-icons-3.png";
+            icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/96/000000/external-storm-weather-those-icons-lineal-color-those-icons-3.png";
 
         } else if (code === 202 || code === 232) {
 
-            icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/48/000000/external-storm-weather-those-icons-lineal-color-those-icons-1.png";
+            icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/96/000000/external-storm-weather-those-icons-lineal-color-those-icons-1.png";
 
         } else if (code === 233 || code === 511) {
 
-            icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/48/000000/external-hail-weather-those-icons-lineal-color-those-icons.png";
+            icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/96/000000/external-hail-weather-those-icons-lineal-color-those-icons.png";
 
         } else if (code === 300 || code === 301 || code === 500 || code === 501 || code === 522 || code === 302) {
 
-            icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/48/000000/external-rain-weather-those-icons-lineal-color-those-icons.png";
+            icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/96/000000/external-rain-weather-those-icons-lineal-color-those-icons.png";
 
         } else if (code === 502 || code === 520 || code === 521 || code === 900) {
 
-            icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/48/000000/external-humidity-weather-those-icons-lineal-color-those-icons.png";
+            icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/96/000000/external-humidity-weather-those-icons-lineal-color-those-icons.png";
 
         } else if (code === 600 || code === 601 || code === 602 || code === 621 || code === 622) {
 
-            icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/48/000000/external-snow-weather-those-icons-lineal-color-those-icons.png";
+            icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/96/000000/external-snow-weather-those-icons-lineal-color-those-icons.png";
 
         } else if (code === 611 || code === 612) {
 
-            icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/48/000000/external-windy-weather-those-icons-lineal-color-those-icons-2.png";
+            icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/96/000000/external-windy-weather-those-icons-lineal-color-those-icons-2.png";
 
         } else if (code === 623) {
 
-            icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/48/000000/external-hurricane-weather-those-icons-lineal-color-those-icons.png";
+            icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/96/000000/external-hurricane-weather-those-icons-lineal-color-those-icons.png";
 
         } else if (code === 700 || code === 711 || code === 721 || code === 731 || code === 741 || code === 751) {
 
-            icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/48/000000/external-fog-weather-those-icons-lineal-color-those-icons.png";
+            icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/96/000000/external-fog-weather-those-icons-lineal-color-those-icons.png";
 
         } else if (code === 800) {
 
-            icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/48/000000/external-sun-weather-those-icons-lineal-color-those-icons.png";
+            icon = "https://img.icons8.com/external-those-icons-lineal-color-those-icons/96/000000/external-sun-weather-those-icons-lineal-color-those-icons.png";
 
         }
 
