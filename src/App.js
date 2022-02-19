@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import MatherComponent from "./components/MatherComponent";
 import AboutMe from "./components/AboutMe";
 import Layout from "./components/Layout";
+import NoPage from "./components/NoPage";
 
 function App() {
     return (
@@ -11,6 +12,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<MatherComponent />} />
                 <Route path="/about" element={<AboutMe/>}/>
+                <Route path="*" element={<NoPage />} />
             </Routes>
         </>
     );

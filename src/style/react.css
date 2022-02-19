@@ -1,6 +1,5 @@
 body{
     direction: rtl;
-    /* background-color: rgb(43, 43, 43); */
     background-image: url("./../image/wellpaper.jpg");
     color: rgb(255, 255, 255);
     font-family: IRANSans;
@@ -12,7 +11,7 @@ body{
     background-color: rgba(226, 226, 226, 0.486);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 8px;
-    padding: 25px;
+    padding:18px;
     margin-top: 50px;
 }
 
@@ -26,6 +25,7 @@ hr{
 
 .box-days-Section3{
     text-align: center;
+    padding: 10px;
 }
 
 .btn-be-days{
@@ -96,4 +96,10 @@ a:hover{
 .logo{
     width: 50px;
     padding: 0px;
+}
+
+.main-page-aboutme{
+    border-radius: 10px;
+    width: 250px;
+    margin: 20px;
 }
