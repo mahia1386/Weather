@@ -1,7 +1,7 @@
 import React from "react";
-import BoxToday from "./BoxToday";
-import BoxNow from "./BoxNow";
-import BoxTheNext16Days from "./BoxTheNext16Days";
+import BoxToday from "./boxToday";
+import BoxNow from "./boxNow";
+import BoxTheNext16Days from "./boxTheNext16Days";
 
 
 function MatherComponent() {
